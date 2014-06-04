@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title>Boostbox - Getting started</title>
+		
+		<!-- BEGIN META -->
+		<meta charset="utf-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="your,keywords">
+		<meta name="description" content="Short explanation about this website">
+		<!-- END META -->
+
+		<!-- BEGIN STYLESHEETS -->
+				<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,400,600,700,800' rel='stylesheet' type='text/css'/>
+			<link type="text/css" rel="stylesheet" href="../assets/css/theme-default/bootstrap.css?1400695306" />
+
+			<link type="text/css" rel="stylesheet" href="../assets/css/theme-default/boostbox.css?1401297311" />
+
+			<link type="text/css" rel="stylesheet" href="../assets/css/theme-default/boostbox_responsive.css?1400695309" />
+
+			<link type="text/css" rel="stylesheet" href="../assets/css/theme-default/font-awesome.min.css?1400333030" />
+
+	
+		<!-- END STYLESHEETS -->
+
+		
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+	<script type="text/javascript" src="../assets/js/libs/utils/html5shiv.js?1400333019"></script>
+	<script type="text/javascript" src="../assets/js/libs/utils/respond.min.js?1400333017"></script>
+    <![endif]-->
+	</head>
+
+	
+					
+				
+
+	<body 	class="body-striped-inverse">
+	
+<!-- BEGIN HEADER-->
+<header id="header">
+	
+
+
+<!-- BEGIN NAVBAR -->
+<nav class="navbar navbar-default" role="navigation">
+	<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="navbar-header">
+		<a class="btn btn-transparent btn-equal btn-menu" href="javascript:void(0);"><i class="fa fa-bars fa-lg"></i></a>
+		<div class="navbar-brand">
+			<a class="main-brand" href="../dashboards/dashboard.html">
+				<h3 class="text-light text-white"><span>Boost<strong>Box</strong> </span><i class="fa fa-rocket fa-fw"></i></h3>
+			</a>
+		</div><!--end .navbar-brand -->
+		<a class="btn btn-transparent btn-equal navbar-toggle" data-toggle="collapse" data-target="#header-navbar-collapse"><i class="fa fa-wrench fa-lg"></i></a>
+	</div>
+
+	<!-- Collect the nav links, forms, and other content for toggling -->
+	<div class="collapse navbar-collapse" id="header-navbar-collapse">
+		<ul class="nav navbar-nav navbar-right">
+			<li><span class="navbar-text">Version 1.0.0</span></li>
+			<li><span class="navbar-devider"></span></li>
+			<li>
+				<div class="navbar-image">
+					<img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKoAAAAoCAYAAABuDmFRAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MjM3M0JFMDJENzY4MTFFM0FENTE4RTlENzAzNDA1N0IiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MjM3M0JFMDNENzY4MTFFM0FENTE4RTlENzAzNDA1N0IiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoyMzczQkUwMEQ3NjgxMUUzQUQ1MThFOUQ3MDM0MDU3QiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoyMzczQkUwMUQ3NjgxMUUzQUQ1MThFOUQ3MDM0MDU3QiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PtwGlEYAABUXSURBVHja7F15fBRV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" />
+				</div>
+			</li>
+		</ul><!--end .nav -->
+	</div><!--end #header-navbar-collapse -->
+</nav>
+<!-- END NAVBAR -->
+</header>
+<!-- END HEADER-->
+
+<!-- BEGIN BASE-->
+<div id="base">
+	
+	<!-- BEGIN SIDEBAR-->
+	<div id="sidebar" class="sidebar-fixed">
+		<div class="sidebar-back"></div>
+		<div class="sidebar-content">
+			<div class="nav-brand">
+				<a class="main-brand" href="../docs/getting-start.html">
+					<h3 class="text-light text-white"><span>Boost<strong>Box</strong> </span><i class="fa fa-rocket fa-fw"></i></h3>
+				</a>
+			</div>
+			
+
+
+
+<!-- BEGIN MAIN MENU -->
+<ul class="main-menu">
+	<!-- Menu Getting started -->
+	<li>
+		<a href="javascript:void(0);">
+			<i class="fa fa-rocket fa-fw"></i><span class="title">Getting started</span> <span class="expand-sign">+</span>
+		</a>
+		<ul>
+			<li><a href="../docs/getting-start.html" class="active">Open</a></li>
+
+		</ul>
+	</li>
+	<!-- Menu CSS -->
+	<li>
+		<a href="javascript:void(0);">
+			<i class="fa fa-flask fa-fw"></i><span class="title">CSS Structure</span> <span class="expand-sign">+</span>
+		</a>
+		<ul>
+			<li><a href="../docs/css.html" >Open</a></li>
+
+		</ul>
+	</li>
+	<!-- Menu Components -->
+	<li>
+		<a href="javascript:void(0);">
+			<i class="fa fa-th-large fa-fw"></i><span class="title">Components</span> <span class="expand-sign">+</span>
+		</a>
+		<ul>
+			<li><a href="../docs/components.html" >Open</a></li>
+
+		</ul>
+	</li>
+	<!-- Menu Javascript -->
+	<li>
+		<a href="javascript:void(0);">
+			<i class="fa fa-code fa-fw"></i><span class="title">Javascript</span> <span class="expand-sign">+</span>
+		</a>
+		<ul>
+			<li><a href="../docs/javascript.html" >Open</a></li>
+
+		</ul>
+	</li>
+	<!-- Menu Javascript-forms -->
+	<li>
+		<a href="javascript:void(0);">
+			<i class="fa fa-code fa-fw"></i><span class="title">Javascript for forms</span> <span class="expand-sign">+</span>
+		</a>
+		<ul>
+			<li><a href="../docs/javascript-forms.html" >Open</a></li>
+
+		</ul>
+	</li>
+	
+</ul><!--end .main-menu -->
+<!-- END MAIN MENU -->
+		</div>
+	</div><!--end #sidebar-->
+	<!-- END SIDEBAR -->
+	
+	<!-- BEGIN CONTENT-->
+	<div id="content">
+		
+<!-- START INTRO SECTION -->
+<section>
+	
+	<div class="section-body contain-lg">
+
+		<!-- START INTRO -->
+		<div class="doc-section doc-lead">
+			<h1 id="intro" class="text-xxxl">Getting started</h1>
+			<p class="lead">
+				Thank you for purchasing Boostbox. 
+				If you have any questions that are beyond the scope of this help file, please leave a comment in the forum and we will respond as soon as possible. 
+			</p>
+		</div>
+		<!-- END INTRO -->
+	</div>
+</section>
+<!-- END INTRO SECTION -->
+
+<!-- START GETTING STARTED SECTION -->
+<section>
+	<div class="section-body contain-lg">
+		
+		<!-- START GENERAL STRUCTURE -->
+<div class="doc-section">
+	
+	<h1 id="general-stucture" class="page-header">General Structure</h1>
+	<p class="lead">
+		The Boostbox Admin Template has been built upon the Bootstrap framework.
+		So everything you find in Bootstrap, you find in Boostbox... and more.
+		Boostbox also included a lot of external javascript libraries wich are optional to include in your project.
+	</p>
+	
+	
+	<h3 id="general-html">HTML</h3>
+	<p>
+		Boostbox requires a few CSS and Javascript imports.
+		Copy the code below to get you started on your project. 
+	</p>
+	<pre class="prettyprint">&lt;html lang=&quot;en&quot;&gt;
+	&lt;head&gt;
+		&lt;title&gt;Boostbox&lt;/title&gt;
+
+		&lt;!-- BEGIN META --&gt;
+		&lt;meta charset=&quot;utf-8&quot;&gt;
+		&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+		&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+		&lt;meta name=&quot;keywords&quot; content=&quot;your,keywords&quot;&gt;
+		&lt;meta name=&quot;description&quot; content=&quot;Short explanation about this website&quot;&gt;
+
+		&lt;!-- BEGIN STYLESHEETS --&gt;
+		&lt;link href=&#039;http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,400,600,700,800&#039; rel=&#039;stylesheet&#039; type=&#039;text/css&#039;/&gt;
+		&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;/assets/css/theme-default/bootstrap.css&quot; /&gt;
+		&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;/assets/css/theme-default/boostbox.css&quot; /&gt;
+		&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;/assets/css/theme-default/boostbox_responsive.css&quot; /&gt;
+		&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;/assets/css/theme-default/font-awesome.min.css&quot; /&gt;
+		&lt;!-- Additional CSS includes --&gt;
+		
+		&lt;!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --&gt;
+		&lt;!--[if lt IE 9]&gt;
+		&lt;script type=&quot;text/javascript&quot; src=&quot;/assets/js/libs/utils/html5shiv.js&quot;&gt;&lt;/script&gt;
+		&lt;script type=&quot;text/javascript&quot; src=&quot;/assets/js/libs/utils/respond.min.js&quot;&gt;&lt;/script&gt;
+		&lt;![endif]--&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		~ BODY content goes here ~
+
+		&lt;!-- BEGIN JAVASCRIPT --&gt;
+		&lt;script src=&quot;/assets/js/libs/jquery/jquery-1.11.0.min.js&quot;&gt;&lt;/script&gt;
+		&lt;script src=&quot;/assets/js/libs/jquery/jquery-migrate-1.2.1.min.js&quot;&gt;&lt;/script&gt;
+		&lt;script src=&quot;/assets/js/core/BootstrapFixed.js&quot;&gt;&lt;/script&gt;
+		&lt;script src=&quot;/assets/js/libs/bootstrap/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+		&lt;!-- Additional JS includes --&gt;
+		
+		&lt;!-- Always put App.js last in your javascript imports --&gt;
+		&lt;script src=&quot;/assets/js/core/App.js&quot;&gt;&lt;/script&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+	
+		
+	<h3 id="general-body">Body</h3>
+	<p>
+		Boostbox has a fluid layout with two columns. 
+		The first column contains the main menu, it's located in a <code>&lt;div&gt;</code> with an id of <code>#sidebar</code>.
+		The second column contains the main content, it's in a <code>&lt;div&gt;</code> with an id of <code>#content</code>.
+		The header can be located in a <code>&lt;div&gt;</code> with an id of <code>#header</code>.
+	</p>
+	<p>
+		The general template structure is the same throughout the template. 
+		Here is the general structure.
+	</p>
+	<pre class="prettyprint">&lt;header id=&quot;header&quot;&gt;
+	~ Header content goes here ~
+&lt;/header&gt;
+&lt;div id=&quot;base&quot;&gt;
+	&lt;div id=&quot;sidebar&quot;&gt;
+		~ Sidebar content goes here ~
+	&lt;/div&gt;
+	&lt;div id=&quot;content&quot;&gt;
+		~ Main content goes here ~
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+	
+	</div>
+<!-- END GENERAL STRUCTURE -->
+		<!-- START SIDEBAR STRUCTURE -->
+<div class="doc-section">
+	
+	<h1 id="sidebar-stucture" class="page-header">Sidebar structure</h1>
+	<p class="lead">
+		The sidebar contains the logo, a searchbar and the main menu.
+	</p>
+	
+	
+	<h3 id="sidebar-brand">Brand & searchbar</h3>
+	<p>
+		The logo is contained in an anchor with a class of <code>main-brand</code>.
+	</p>
+	<pre class="prettyprint">&lt;div id=&quot;sidebar&quot;&gt;
+	&lt;div class=&quot;sidebar-back&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;sidebar-content&quot;&gt;
+		&lt;div class=&quot;nav-brand&quot;&gt;
+			&lt;a class=&quot;main-brand&quot; href=&quot;../../html/dashboards/dashboard.html&quot;&gt;
+				~ Your logo goes here ~
+			&lt;/a&gt;
+		&lt;/div&gt;
+		&lt;form class=&quot;sidebar-search&quot; role=&quot;search&quot;&gt;
+			&lt;a href=&quot;javascript:void(0);&quot;&gt;&lt;i class=&quot;fa fa-search fa-fw search-icon&quot;&gt;&lt;/i&gt;&lt;i class=&quot;fa fa-angle-left fa-fw close-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+			&lt;div class=&quot;form-group&quot;&gt;
+				&lt;div class=&quot;input-group&quot;&gt;
+					&lt;input type=&quot;text&quot; class=&quot;form-control navbar-input&quot; placeholder=&quot;Search...&quot;&gt;
+					&lt;span class=&quot;input-group-btn&quot;&gt;
+						&lt;button class=&quot;btn btn-equal&quot; type=&quot;button&quot;&gt;&lt;i class=&quot;fa fa-search&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+					&lt;/span&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/form&gt;
+		&lt;ul class=&quot;main-menu&quot;&gt;
+			~ Main navigation goes here ~
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+	
+		
+	<h3 id="sidebar-menu">Main menu</h3>
+	<p>
+		The main menu can contain links.
+		Every main link can hold an icon.
+		Every menu item can contain a submenu. 
+		Visually Boostbox will indent and darken the submenu's up to 5 levels deep.
+	</p>
+	<p>
+		To add an extra submenu, simply add an <code>ul</code> list to a <code>li</code> item.
+		You can see this with "Submenu link3" in the code sample below.
+	</p>
+	<pre class="prettyprint">&lt;ul class=&quot;main-menu&quot;&gt;
+	...
+	&lt;li&gt;
+		&lt;a href=&quot;javascript:void(0);&quot; class=&quot;active&quot;&gt;
+			&lt;i class=&quot;fa fa-file fa-fw&quot;&gt;&lt;/i&gt;&lt;span class=&quot;title&quot;&gt;Home&lt;/span&gt; &lt;span class=&quot;expand-sign&quot;&gt;+&lt;/span&gt;
+		&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;javascript:void(0);&quot; class=&quot;active&quot;&gt;
+			&lt;i class=&quot;fa fa-file fa-fw&quot;&gt;&lt;/i&gt;&lt;span class=&quot;title&quot;&gt;Profile&lt;/span&gt; &lt;span class=&quot;expand-sign&quot;&gt;+&lt;/span&gt;
+		&lt;/a&gt;
+		&lt;ul&gt;
+			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Submenu link1&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Submenu link2&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;#&quot;&gt;Submenu link3&lt;/a&gt;
+				&lt;ul&gt;
+					...
+				&lt;/ul&gt;
+			&lt;/li&gt;
+			...
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	...
+&lt;/ul&gt;
+</pre>
+	
+	</div>
+<!-- END SIDEBAR STRUCTURE -->
+		<!-- START HEADER STRUCTURE -->
+<div class="doc-section">
+	
+	<h1 id="header-stucture" class="page-header">Header structure</h1>
+	<p class="lead">
+		The header contains a modified version of the Bootstrap navbar. 
+		Therefore you can use the navbar code from the Bootstrap site to create the header in your Admin template.
+	</p>
+	<p>
+		View the code below to get started. For more details visit the <a class="btn-link" href="http://getbootstrap.com/css/#nav" target="blank">Bootstrap docs <span class="glyphicon glyphicon-link"></span></a>.
+	</p>
+	<pre class="prettyprint">&lt;header id=&quot;header&quot;&gt;
+	&lt;nav class=&quot;navbar navbar-default&quot; role=&quot;navigation&quot;&gt;
+		&lt;div class=&quot;navbar-header&quot;&gt;
+			~ Mobile navigation items ~
+		&lt;/div&gt;
+		&lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;header-navbar-collapse&quot;&gt;
+			&lt;ul class=&quot;nav navbar-nav&quot;&gt;
+				~ Left aligned navigation items ~
+			&lt;/ul&gt;
+			&lt;ul class=&quot;nav navbar-nav navbar-right&quot;&gt;
+				~ Right aligned navigation items ~
+			&lt;/ul&gt;
+		&lt;/div&gt;
+	&lt;/nav&gt;
+&lt;/header&gt;
+</pre>
+	
+	</div>
+<!-- END HEADER STRUCTURE -->
+		<!-- START LESS STRUCTURE -->
+<div class="doc-section">
+	
+	<h1 id="less-stucture" class="page-header">Less structure</h1>
+	<p class="lead">
+		Use the .less files to change the look of your project.
+	</p>
+	
+	
+	<h3 id="less-html">HTML</h3>
+	<p>
+		The .less files for Boostbox have the following structure:
+	</p>
+	<pre class="prettyprint">boostbox/
+└── assets/
+    └── less/
+        ├── bootstrap.less
+        ├── boostbox.less
+        ├── boostbox_demo.less
+        ├── boostbox_responsive.less
+        ├── bootstrap/
+        │   ├── // unmodified bootstrap less files
+        │   └── ...
+        ├── boostbox/
+        │   ├── // boostbox less files
+        │   ├── ...
+        │   └── responsive/
+        │       ├── // responsive boostbox less files
+        │       └── ...
+        ├── libs/
+        │   ├── // less files for javascript addons
+        │   └── ...
+        └── shared/
+            ├── animations.less
+            ├── mixins.less
+            ├── variables.less
+            └── themes/
+                ├── theme-1.less
+                ├── theme-2.less
+                ├── theme-3.less
+                ├── theme-4.less
+                ├── theme-5.less
+                └── theme-default.less
+</pre>
+	
+	<h4>Basic modifications</h4>
+	<p>
+		If you want to tweak some colors and basic dimensions for your project, you can create a new theme in 2 steps:
+	</p>
+	<ol>
+		<li>Create a new file in the directory <code>/boostbox/assets/less/shared/themes/</code> called:<code>theme-custom.less</code></li>
+		<li>In the file <code>/boostbox/assets/less/shared/variables.less</code> change the line at the very bottom from:<br/>
+			<code>@import "themes/theme-default.less";</code><br/>
+			to<br/>
+			<code>@import "themes/theme-custom.less";</code>
+		</li>
+	</ol>
+	<p>
+		Any modification of .less variables should be placed inside <code>theme-custom.less</code>.
+		This file will overwrite any variable located in <code>/boostbox/assets/less/shared/variables.less</code> and <code>/boostbox/assets/less/bootstrap/variables.less</code>
+	</p>
+	
+	
+	<h4>Extensive modifications</h4>
+	<p>
+		Boostbox has kept the Bootstrap .less files original.
+		This way you can update Bootstrap easily.
+		Therefore it's recommended not to change the files located in <code>/boostbox/assets/less/bootstrap/</code>.<br/>
+		The documentation has green outlined boxes which indicates the location of the .less files for that particular component.
+		These files overwrite the Bootstrap components in some cases.
+		Extensive modifications can be applied in these .less files.
+		
+		
+		
+			</p>
+	
+		
+	<h3 id="less-compile">Compile</h3>
+	<p>
+		If you modify the .less files, you should remember to compile the .less files to CSS.
+		The .less files that should be compiled to CSS are the files directly in the directory <code>/boostbox/assets</code> and every .less file located in the subdirectories of <code>/boostbox/assets/libs</code>.
+	</p>
+	
+	</div>
+<!-- END LESS STRUCTURE -->
+		<!-- START LESS STRUCTURE -->
+<div class="doc-section">
+	
+	<h1 id="credits-stucture" class="page-header">Credits</h1>
+	<p class="lead">
+		Boostbox uses the following images, less files and javascript files as listed:
+	</p>
+	
+	<pre class="prettyprint">boostbox/
+├── assets/
+│   └── less/
+│       ├── bootstrap.less (from Twitter, Inc)
+│       └── bootstrap/ (from Twitter, Inc)
+├── img/
+│   ├── img1.jpg (from Pixabay)
+│   ├── img2.jpg (from Pixabay)
+│   ├── img3.jpg (from Envato)
+│   ├── img4.jpg (from Pixabay)
+│   ├── img5.jpg (from Pixabay)
+│   ├── img6.jpg (from Pixabay)
+│   ├── img7.jpg (from Pixabay)
+│   ├── img8.jpg (from Photodune, link: &#039;http://photodune.net/item/facial-portrait-of-an-attractive-adult-man/6364232&#039; )
+│   ├── avatar1.jpg (from Photodune, link: &#039;http://photodune.net/item/facial-portrait-of-an-attractive-adult-man/6364232&#039; )
+│   ├── avatar2.jpg (from Pixabay)
+│   └── avatar3.jpg (from Pixabay)
+└── js/
+    └── libs/
+        ├── dataTables/ (from Allan Jardine)
+        ├── blueimp-file-upload/ (from Sebastian Tschan)
+        ├── bootstrap/ (from Twitter, Inc)
+        ├── bootstrap-colorpicker/ (from Stefan Petre)
+        ├── bootstrap-datetimepicker/ (from Stefan Petre)
+        ├── bootstrap-tagsinput/ (from Tim Schlechter)
+        ├── ckeditor/ (from CKEditor)
+        ├── excanvas-modified/ (from Google)
+        ├── flot/ (from IOLA and Ole Laursen)
+        ├── fullcalendar/ (from Adam Shaw)
+        ├── google-code-prettify/ (from Google)
+        ├── inputmask/ (from Robin Herbots)
+        ├── jquery/ (from jQuery Foundation, Inc)
+        ├── jquery-knob/ (from Anthony Terrien)
+        ├── jquery-ui/ (from jQuery Foundation, Inc)
+        ├── jquery-validation/ (from Jörn Zaefferer)
+        ├── moment/ (from Tim Wood, Iskren Chernev, Moment.js contributors)
+        ├── morris.js/ (from Olly Smith)
+        ├── multi-select/ (from Sam Hocevar)
+        ├── nestable/ (from David Bushell)
+        ├── raphael/ (from Dmitry Baranovskiy)
+        ├── select2/ (from Igor Vaynberg)
+        ├── slimscroll/ (from Piotr Rochala)
+        ├── sparkline/ (from Splunk, Inc)
+        ├── spin.js/ (from Felix Gnass)
+        ├── toastr/ (from Hans Fjällemark &amp; John Papa)
+        ├── typeahead/ (from Twitter, Inc)
+        ├── wizard/ (from Vincent Gabriel &amp; Jason Gill)
+        └── wysihtml5/ (from XING AG)
+</pre>
+	
+	</div>
+<!-- END LESS STRUCTURE -->
+		
+	</div><!--end .section-body -->
+</section>
+<!-- END GETTING STARTED SECTION -->
+
+	</div><!--end #content-->		
+	<!-- END CONTENT -->
+	
+</div><!--end #base-->	
+<!-- END BASE -->
+
+	<!-- BEGIN JAVASCRIPT -->
+		
+			<script src="../assets/js/libs/jquery/jquery-1.11.0.min.js"></script>
+<script src="../assets/js/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
+<script src="../assets/js/libs/jquery-ui/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="../assets/js/core/BootstrapFixed.js"></script>
+<script src="../assets/js/libs/bootstrap/bootstrap.min.js"></script>
+<script src="../assets/js/libs/spin.js/spin.min.js"></script>
+<script src="../assets/js/libs/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="../assets/js/core/demo/DemoDocs.js"></script>
+<script src="../assets/js/core/App.js"></script>
+<script src="../assets/js/core/demo/Demo.js"></script>
+
+	
+	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+	<!-- END JAVASCRIPT -->
+	
+	</body>
+</html>

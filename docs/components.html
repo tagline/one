@@ -1,0 +1,2060 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title>Boostbox - Components</title>
+		
+		<!-- BEGIN META -->
+		<meta charset="utf-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="your,keywords">
+		<meta name="description" content="Short explanation about this website">
+		<!-- END META -->
+
+		<!-- BEGIN STYLESHEETS -->
+				<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,400,600,700,800' rel='stylesheet' type='text/css'/>
+			<link type="text/css" rel="stylesheet" href="../assets/css/theme-default/bootstrap.css?1400695306" />
+
+			<link type="text/css" rel="stylesheet" href="../assets/css/theme-default/boostbox.css?1401297311" />
+
+			<link type="text/css" rel="stylesheet" href="../assets/css/theme-default/boostbox_responsive.css?1400695309" />
+
+			<link type="text/css" rel="stylesheet" href="../assets/css/theme-default/font-awesome.min.css?1400333030" />
+
+	
+		<!-- END STYLESHEETS -->
+
+		
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+	<script type="text/javascript" src="../assets/js/libs/utils/html5shiv.js?1400333019"></script>
+	<script type="text/javascript" src="../assets/js/libs/utils/respond.min.js?1400333017"></script>
+    <![endif]-->
+	</head>
+
+	
+					
+				
+
+	<body 	class="body-striped-inverse">
+	
+<!-- BEGIN HEADER-->
+<header id="header">
+	
+
+
+<!-- BEGIN NAVBAR -->
+<nav class="navbar navbar-default" role="navigation">
+	<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="navbar-header">
+		<a class="btn btn-transparent btn-equal btn-menu" href="javascript:void(0);"><i class="fa fa-bars fa-lg"></i></a>
+		<div class="navbar-brand">
+			<a class="main-brand" href="../dashboards/dashboard.html">
+				<h3 class="text-light text-white"><span>Boost<strong>Box</strong> </span><i class="fa fa-rocket fa-fw"></i></h3>
+			</a>
+		</div><!--end .navbar-brand -->
+		<a class="btn btn-transparent btn-equal navbar-toggle" data-toggle="collapse" data-target="#header-navbar-collapse"><i class="fa fa-wrench fa-lg"></i></a>
+	</div>
+
+	<!-- Collect the nav links, forms, and other content for toggling -->
+	<div class="collapse navbar-collapse" id="header-navbar-collapse">
+		<ul class="nav navbar-nav navbar-right">
+			<li><span class="navbar-text">Version 1.0.0</span></li>
+			<li><span class="navbar-devider"></span></li>
+			<li>
+				<div class="navbar-image">
+					<img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKoAAAAoCAYAAABuDmFRAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MjM3M0JFMDJENzY4MTFFM0FENTE4RTlENzAzNDA1N0IiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MjM3M0JFMDNENzY4MTFFM0FENTE4RTlENzAzNDA1N0IiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoyMzczQkUwMEQ3NjgxMUUzQUQ1MThFOUQ3MDM0MDU3QiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoyMzczQkUwMUQ3NjgxMUUzQUQ1MThFOUQ3MDM0MDU3QiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PtwGlEYAABUXSURBVHja7F15fBRV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" />
+				</div>
+			</li>
+		</ul><!--end .nav -->
+	</div><!--end #header-navbar-collapse -->
+</nav>
+<!-- END NAVBAR -->
+</header>
+<!-- END HEADER-->
+
+<!-- BEGIN BASE-->
+<div id="base">
+	
+	<!-- BEGIN SIDEBAR-->
+	<div id="sidebar" class="sidebar-fixed">
+		<div class="sidebar-back"></div>
+		<div class="sidebar-content">
+			<div class="nav-brand">
+				<a class="main-brand" href="../docs/getting-start.html">
+					<h3 class="text-light text-white"><span>Boost<strong>Box</strong> </span><i class="fa fa-rocket fa-fw"></i></h3>
+				</a>
+			</div>
+			
+
+
+
+<!-- BEGIN MAIN MENU -->
+<ul class="main-menu">
+	<!-- Menu Getting started -->
+	<li>
+		<a href="javascript:void(0);">
+			<i class="fa fa-rocket fa-fw"></i><span class="title">Getting started</span> <span class="expand-sign">+</span>
+		</a>
+		<ul>
+			<li><a href="../docs/getting-start.html" >Open</a></li>
+
+		</ul>
+	</li>
+	<!-- Menu CSS -->
+	<li>
+		<a href="javascript:void(0);">
+			<i class="fa fa-flask fa-fw"></i><span class="title">CSS Structure</span> <span class="expand-sign">+</span>
+		</a>
+		<ul>
+			<li><a href="../docs/css.html" >Open</a></li>
+
+		</ul>
+	</li>
+	<!-- Menu Components -->
+	<li>
+		<a href="javascript:void(0);">
+			<i class="fa fa-th-large fa-fw"></i><span class="title">Components</span> <span class="expand-sign">+</span>
+		</a>
+		<ul>
+			<li><a href="../docs/components.html" class="active">Open</a></li>
+
+		</ul>
+	</li>
+	<!-- Menu Javascript -->
+	<li>
+		<a href="javascript:void(0);">
+			<i class="fa fa-code fa-fw"></i><span class="title">Javascript</span> <span class="expand-sign">+</span>
+		</a>
+		<ul>
+			<li><a href="../docs/javascript.html" >Open</a></li>
+
+		</ul>
+	</li>
+	<!-- Menu Javascript-forms -->
+	<li>
+		<a href="javascript:void(0);">
+			<i class="fa fa-code fa-fw"></i><span class="title">Javascript for forms</span> <span class="expand-sign">+</span>
+		</a>
+		<ul>
+			<li><a href="../docs/javascript-forms.html" >Open</a></li>
+
+		</ul>
+	</li>
+	
+</ul><!--end .main-menu -->
+<!-- END MAIN MENU -->
+		</div>
+	</div><!--end #sidebar-->
+	<!-- END SIDEBAR -->
+	
+	<!-- BEGIN CONTENT-->
+	<div id="content">
+		
+<!-- START INTRO SECTION -->
+<section>
+	
+	<div class="section-body contain-lg">
+
+		<!-- START CSS SECTION -->
+		<div class="doc-section doc-lead">
+			<h1 id="header-stucture" class="text-xxxl">Components</h1>
+			<p class="lead">
+				Over a dozen reusable components built to provide iconography, dropdowns, input groups, navigation, alerts, and much more.
+			</p>
+		</div>
+		<!-- END CSS SECTION -->
+
+</section>
+<!-- END INTRO SECTION -->
+
+<!-- START CSS SECTION -->
+<section>
+	<div class="section-body contain-lg">
+
+		<!-- START DROPDOWN -->
+<div class="doc-section">
+	
+	<h1 id="sidebar-main" class="page-header">Sidebar</h1>
+	
+	<div class="box box-outlined style-support1">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Additional styles and behavior for this component are located in the following files</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<dl class="dl-horizontal">
+				<dt>Component styles</dt>
+				<dd><code>boostbox/assets/less/boostbox/sidebar.less</code></dd>
+				<dt>&nbsp;</dt><dd>&nbsp;</dd>
+				<dt>Component variables</dt>
+				<dd><code>boostbox/assets/less/shared/variables.less</code><pre class="prettyprint">@sidebar-width:
+@sidebar-width-collapsed:
+@sidebar-bg:
+@sidebar-color:
+@sidebar-color-selected:
+@sidebar-color-icon:
+@sidebar-sub-bg:
+@sidebar-sub-color:
+@sidebar-collapse-speed:
+@sidebar-collapse-ease:
+</pre></dd>
+			</dl>
+		</div>
+	</div>
+	
+	
+	<h3 id="sidebar-fixed">Fixed to side</h3>
+	<p>
+		Add <code>.sidebar-fixed</code> to <code>#sidebar</code> to stick your sidebar to the left side of your screen.
+		This will automatically add a scrollbar to your sidebar if needed.
+	</p>
+		<pre class="prettyprint">&lt;div id=&quot;sidebar&quot; class=&quot;sidebar-fixed&quot;&gt;
+	...
+&lt;/div&gt;
+</pre>
+	
+	
+	<h3 id="sidebar-fixed">Sidebar collapsed</h3>
+	<p>
+		Add <code>.sidebar-collapsed</code> to the <code>&lt;body&gt;</code> to collapse your sidebar.
+	</p>
+		<pre class="prettyprint">&lt;body class=&quot;sidebar-collapsed&quot;&gt;
+	...
+&lt;/body&gt;
+</pre>
+	
+	</div>
+<!-- END DROPDOWN -->		<!-- START DROPDOWN -->
+<div class="doc-section">
+	
+	<h1 id="headerbar" class="page-header">Headerbar</h1>
+	
+	<div class="box box-outlined style-support1">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Additional styles and behavior for this component are located in the following files</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<dl class="dl-horizontal">
+				<dt>Component styles</dt>
+				<dd><code>boostbox/assets/less/boostbox/header-nav.less</code></dd>
+				<dt>&nbsp;</dt><dd>&nbsp;</dd>
+				<dt>Component variables</dt>
+				<dd><code>boostbox/assets/less/shared/variables.less</code><pre class="prettyprint">// Basics of a navbar
+@headerbar-height:
+@headerbar-padding-vertical:
+@headerbar-bg:
+
+// Navbar links
+@headerbar-link-active-color:
+@headerbar-link-active-bg:
+@headerbar-link-disabled-color:
+@headerbar-link-disabled-bg:
+
+// Inverted headerbar
+@headerbar-inverse-bg:
+@headerbar-inverse-border:
+
+// Inverted navbar links
+@headerbar-inverse-link-active-bg:
+@headerbar-inverse-link-disabled-color:
+@headerbar-inverse-link-disabled-bg:
+
+// Inverted navbar toggle
+@headerbar-inverse-toggle-hover-bg:
+@headerbar-inverse-toggle-icon-bar-bg:
+@headerbar-inverse-toggle-border-color:
+</pre></dd>
+			</dl>
+		</div>
+	</div>
+	
+	
+	<h3 id="headerbar-fixed">Fixed to top</h3>
+	<p>
+		Add <code>.navbar-fixed-top</code> to the <code>.navbar</code> in your <code>#header</code> to stick your header to the top of your screen.
+	</p>
+		<pre class="prettyprint">&lt;header id=&quot;header&quot;&gt;
+	&lt;nav class=&quot;navbar navbar-default navbar-fixed-top&quot;&gt;
+		...
+	&lt;/nav&gt;
+&lt;/header&gt;
+</pre>
+	
+	</div>
+<!-- END DROPDOWN -->		<!-- START BOX -->
+<div class="doc-section">
+	
+	<h1 id="box" class="page-header">Boxes</h1>
+	<p class="lead">
+		Boxes are a big part of the Boostbox styling. There are a lot of styling options for the <code>.box</code> class.
+	</p>
+	
+	<div class="box box-outlined style-support1">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Additional styles and behavior for this component are located in the following files</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<dl class="dl-horizontal">
+				<dt>Component styles</dt>
+				<dd><code>boostbox/assets/less/boostbox/box.less</code></dd>
+			</dl>
+		</div>
+	</div>
+	
+		
+	<h3 id="box-tiles">Box tiles</h3>
+	<p>
+		Use <code>.box-tiles</code> to remove all padding on the direct <code>.row</code> and <code>.col-*</code> classes.
+	</p>
+	<div class="box box-outlined style-body">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Example</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			
+			<div class="box box-tiles">
+				<div class="row style-support1">
+					<div class="col-md-5">
+						<div class="box-body">.style-support1</div>
+					</div>
+					<div class="col-md-7 style-support5-gradient height-4">
+						<div class="box-body">.style-support5-gradient</div>
+					</div>
+				</div>
+				<div class="row style-support2-gradient">
+					<div class="col-md-12">
+						<div class="box-body">.style-support2-gradient</div>
+					</div>
+				</div>
+				<div class="row style-inverse">
+					<div class="col-md-7">
+						<div class="box-body">.style-inverse</div>
+					</div>
+					<div class="col-md-5 style-primary-gradient height-4">
+						<div class="box-body">.style-primary-gradient</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<pre class="prettyprint">&lt;div class=&quot;box box-tiles&quot;&gt;
+	&lt;div class=&quot;row style-support1&quot;&gt;
+		&lt;div class=&quot;col-md-5&quot;&gt;
+			&lt;div class=&quot;box-body&quot;&gt;.style-support1&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;col-md-7 style-support5-gradient height-4&quot;&gt;
+			&lt;div class=&quot;box-body&quot;&gt;.style-support5-gradient&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;row style-support2-gradient&quot;&gt;
+		&lt;div class=&quot;col-md-12&quot;&gt;
+			&lt;div class=&quot;box-body&quot;&gt;.style-support2-gradient&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;row style-inverse&quot;&gt;
+		&lt;div class=&quot;col-md-7&quot;&gt;
+			&lt;div class=&quot;box-body&quot;&gt;.style-inverse&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;col-md-5 style-primary-gradient height-4&quot;&gt;
+			&lt;div class=&quot;box-body&quot;&gt;.style-primary-gradient&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+	</div>
+	
+		
+	<h3 id="box-pricing">Box pricing</h3>
+	<p>
+		A pricing component that can optionally indent the top or bottom.<br/>
+		Use <code>.box</code> and <code>.box-type-pricing</code> to activate the price styling.
+		Because it's based on <code>.box</code> it inherits its style properties.
+	</p>
+	<div class="box box-outlined style-body">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Example</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="box box-type-pricing">
+						<div class="box-body text-center style-primary">
+							<h2 class="text-light">Basic</h2>
+							<div class="price">
+								<span class="text-lg">$</span><h2><span class="text-xxxl">7</span></h2> <span>/mo</span>
+							</div>
+							<br/>
+							<p class="opacity-50"><em>Rame aute irure dolor in reprehenderit pariatur.</em></p>
+						</div>
+						<div class="box-body no-padding style-body">
+							<ul class="list-unstyled text-left">
+								<li>20 Pages</li>
+								<li>100 GB Bandwidth</li>
+								<li>1 GB Storage</li>
+								<li>24/7 Customer Support</li>
+							</ul>
+						</div>
+						<div class="box-body style-body">
+							<a class="btn btn-primary">Sign up</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="box box-type-pricing indent-top">
+						<div class="box-body text-center style-primary">
+							<h2 class="text-light">Basic</h2>
+							<div class="price">
+								<span class="text-lg">$</span><h2><span class="text-xxxl">7</span></h2> <span>/mo</span>
+							</div>
+							<br/>
+							<p class="opacity-50"><em>Rame aute irure dolor in reprehenderit pariatur.</em></p>
+						</div>
+						<div class="box-body no-padding style-body">
+							<ul class="list-unstyled text-left">
+								<li>20 Pages</li>
+								<li>100 GB Bandwidth</li>
+								<li>1 GB Storage</li>
+								<li>24/7 Customer Support</li>
+							</ul>
+						</div>
+						<div class="box-body style-body">
+							<a class="btn btn-primary">Sign up</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="box box-type-pricing indent-bottom">
+						<div class="box-body text-center style-primary">
+							<h2 class="text-light">Basic</h2>
+							<div class="price">
+								<span class="text-lg">$</span><h2><span class="text-xxxl">7</span></h2> <span>/mo</span>
+							</div>
+							<br/>
+							<p class="opacity-50"><em>Rame aute irure dolor in reprehenderit pariatur.</em></p>
+						</div>
+						<div class="box-body no-padding style-body">
+							<ul class="list-unstyled text-left">
+								<li>20 Pages</li>
+								<li>100 GB Bandwidth</li>
+								<li>1 GB Storage</li>
+								<li>24/7 Customer Support</li>
+							</ul>
+						</div>
+						<div class="box-body style-body">
+							<a class="btn btn-primary">Sign up</a>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<pre class="prettyprint">&lt;div class=&quot;box box-type-pricing&quot;&gt;
+	&lt;div class=&quot;box-body text-center style-inverse&quot;&gt;
+		&lt;h2 class=&quot;text-light&quot;&gt;Basic&lt;/h2&gt;
+		&lt;div class=&quot;price&quot;&gt;
+			&lt;span class=&quot;text-lg&quot;&gt;$&lt;/span&gt;
+			&lt;h2&gt;&lt;span class=&quot;text-xxxl&quot;&gt;7&lt;/span&gt;&lt;/h2&gt; 
+			&lt;span&gt;/mo&lt;/span&gt;
+		&lt;/div&gt;
+		&lt;br/&gt;
+		&lt;p class=&quot;opacity-50&quot;&gt;&lt;em&gt;Rame aute irure dolor in reprehenderit pariatur.&lt;/em&gt;&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;box-body no-padding style-body&quot;&gt;
+		&lt;ul class=&quot;list-unstyled text-left&quot;&gt;
+			&lt;li&gt;20 Pages&lt;/li&gt;
+			&lt;li&gt;100 GB Bandwidth&lt;/li&gt;
+			&lt;li&gt;1 GB Storage&lt;/li&gt;
+			&lt;li&gt;24/7 Customer Support&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;box-body style-body&quot;&gt;
+		&lt;a class=&quot;btn btn-inverse&quot;&gt;Sign up&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+	</div>
+	
+	<p>
+		If you want to indent the top or bottom, use <code>.indent-top</code> or <code>.indent-bottom</code>
+	</p>
+	<pre class="prettyprint">&lt;div class=&quot;box box-type-pricing&quot;&gt;
+	...
+&lt;/div&gt;
+		
+&lt;div class=&quot;box box-type-pricing indent-top&quot;&gt;
+	...
+&lt;/div&gt;
+		
+&lt;div class=&quot;box box-type-pricing indent-bottom&quot;&gt;
+	...
+&lt;/div&gt;
+</pre>
+	
+		
+		
+		
+	<h3 id="box-locked">Box locked</h3>
+	<p>
+		Use <code>.box-type-locked</code> to wrap around your <code>.box</code>. 
+		Logic for your <code>&lt;form&gt;</code> goes in <code>.box-body</code>.
+	</p>
+	<div class="box style-inverse">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Example</h5>
+			</header>
+		</div>
+		<div class="box-body" style="height: 600px;">
+			
+			<div class="box-type-locked">
+				<div class="box text-center">
+					<div class="box-head">
+						<h2 class="text-light text-white">Boost<strong>Box</strong> <i class="fa fa-rocket fa-fw"></i></h2>
+						<h4 class="text-light text-inverse-alt">Enter your password to unlock</h4>
+					</div>
+					<div class="box-body box-centered style-inverse">
+						<img class="img-circle" src="../assets/img/avatar1.jpg?1401297311" alt="" />
+						<h2 class="text-light">Daniel Johnson</h2>
+						<form>
+							<div class="input-group">
+								<input type="password" class="form-control" placeholder="Password">
+								<span class="input-group-btn">
+									<button class="btn btn-equal btn-primary" type="submit"><i class="fa fa-unlock"></i></button>
+								</span>
+							</div>
+						</form>
+						<br/>
+						<a class="text-primary-alt" href="#">Not Daniel Johnson?</a>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<pre class="prettyprint">&lt;div class=&quot;box-type-locked&quot;&gt;
+	&lt;div class=&quot;box text-center style-transparent&quot;&gt;
+		&lt;div class=&quot;box-head&quot;&gt;
+			&lt;h2 class=&quot;text-light text-white&quot;&gt;
+				Boost&lt;strong&gt;Box&lt;/strong&gt; 
+				&lt;i class=&quot;fa fa-rocket fa-fw&quot;&gt;&lt;/i&gt;
+			&lt;/h2&gt;
+			&lt;h4 class=&quot;text-light text-inverse-alt&quot;&gt;Enter your password to unlock&lt;/h4&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;box-body box-centered style-inverse&quot;&gt;
+			&lt;img class=&quot;img-circle&quot; src=&quot;...&quot; alt=&quot;&quot; /&gt;
+			&lt;h2 class=&quot;text-light&quot;&gt;Daniel Johnson&lt;/h2&gt;
+			&lt;form&gt;
+				&lt;div class=&quot;input-group&quot;&gt;
+					&lt;input type=&quot;password&quot; class=&quot;form-control&quot; placeholder=&quot;Password&quot;&gt;
+					&lt;span class=&quot;input-group-btn&quot;&gt;
+						&lt;button class=&quot;btn btn-equal btn-primary&quot; type=&quot;submit&quot;&gt;
+							&lt;i class=&quot;fa fa-unlock&quot;&gt;&lt;/i&gt;
+						&lt;/button&gt;
+					&lt;/span&gt;
+				&lt;/div&gt;
+			&lt;/form&gt;
+			&lt;br/&gt;
+			&lt;a class=&quot;text-primary-alt&quot; href=&quot;#&quot;&gt;Not Daniel Johnson?&lt;/a&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+	</div>
+	
+	<div class="box box-outlined style-support1">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Additional styles and behavior for this component are located in the following files</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<dl class="dl-horizontal">
+				<dt>Component variables</dt>
+				<dd><code>boostbox/assets/less/shared/variables.less</code><pre class="prettyprint">@lock-header-height:	100px;
+@lock-body-height:		330px;
+@lock-body-width:			500px;
+@lock-body-spacer:		25px;
+</pre></dd>
+			</dl>
+		</div>
+	</div>
+	
+		
+	<h3 id="box-login">Box login</h3>
+	<p>
+		Use <code>.box-type-login</code> to wrap around your <code>.box</code>. 
+		Logic for your <code>&lt;form&gt;</code> goes in <code>.box-body</code>.
+	</p>
+	<div class="box style-inverse">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Example</h5>
+			</header>
+		</div>
+		<div class="box-body" style="height: 600px;">
+
+			<div class="box-type-login">
+				<div class="box text-center">
+					<div class="box-head">
+						<h2 class="text-light text-white">Boost<strong>Box</strong> <i class="fa fa-rocket fa-fw"></i></h2>
+						<h4 class="text-light text-inverse-alt">Ease your output with BoostBox</h4>
+					</div>
+					<div class="box-body box-centered style-inverse">
+						<h2 class="text-light">Sign in to your account</h2>
+						<br/>
+						<form>
+							<div class="form-group">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user"></i></span>
+									<input type="text" class="form-control" placeholder="Username">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+									<input type="password" class="form-control" placeholder="Password">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6 text-left">
+									<div data-toggle="buttons">
+										<label class="btn checkbox-inline btn-checkbox-primary-inverse">
+											<input type="checkbox" value="default-inverse1"> Remember me
+										</label>
+									</div>
+								</div>
+								<div class="col-xs-6 text-right">
+									<button class="btn btn-primary" type="submit"><i class="fa fa-key"></i> Sign in</button>
+								</div>
+							</div>
+						</form>
+					</div><!--end .box-body -->
+					<div class="box-footer force-padding text-white">
+						<a class="text-primary-alt" href="#">No account yet?</a> Or did you 
+						<a class="text-primary-alt" href="#">forgot your password?</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<pre class="prettyprint">&lt;div class=&quot;box-type-login&quot;&gt;
+	&lt;div class=&quot;box text-center&quot;&gt;
+		&lt;div class=&quot;box-head&quot;&gt;
+			&lt;h2 class=&quot;text-light text-white&quot;&gt;
+				Boost&lt;strong&gt;Box&lt;/strong&gt;
+				&lt;i class=&quot;fa fa-rocket fa-fw&quot;&gt;&lt;/i&gt;
+			&lt;/h2&gt;
+			&lt;h4 class=&quot;text-light text-inverse-alt&quot;&gt;
+				Ease your output with BoostBox
+			&lt;/h4&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;box-body box-centered style-inverse&quot;&gt;
+			&lt;h2 class=&quot;text-light&quot;&gt;Sign in to your account&lt;/h2&gt;
+			&lt;br/&gt;
+			&lt;form&gt;
+				&lt;div class=&quot;form-group&quot;&gt;
+					&lt;div class=&quot;input-group&quot;&gt;
+						&lt;span class=&quot;input-group-addon&quot;&gt;&lt;i class=&quot;fa fa-user&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+						&lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;Username&quot;&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class=&quot;form-group&quot;&gt;
+					&lt;div class=&quot;input-group&quot;&gt;
+						&lt;span class=&quot;input-group-addon&quot;&gt;&lt;i class=&quot;fa fa-lock&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+						&lt;input type=&quot;password&quot; class=&quot;form-control&quot; placeholder=&quot;Password&quot;&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class=&quot;row&quot;&gt;
+					&lt;div class=&quot;col-xs-6 text-left&quot;&gt;
+						&lt;div data-toggle=&quot;buttons&quot;&gt;
+							&lt;label class=&quot;btn checkbox-inline btn-checkbox-primary-inverse&quot;&gt;
+								&lt;input type=&quot;checkbox&quot; value=&quot;default-inverse1&quot;&gt; Remember me
+							&lt;/label&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class=&quot;col-xs-6 text-right&quot;&gt;
+						&lt;button class=&quot;btn btn-primary&quot; type=&quot;submit&quot;&gt;
+							&lt;i class=&quot;fa fa-key&quot;&gt;&lt;/i&gt;
+							Sign in
+						&lt;/button&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/form&gt;
+		&lt;/div&gt;&lt;!--end .box-body --&gt;
+		&lt;div class=&quot;box-footer force-padding text-white&quot;&gt;
+			&lt;a class=&quot;text-primary-alt&quot; href=&quot;#&quot;&gt;No account yet?&lt;/a&gt; Or did you 
+			&lt;a class=&quot;text-primary-alt&quot; href=&quot;#&quot;&gt;forgot your password?&lt;/a&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+	</div>
+	
+	<div class="box box-outlined style-support1">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Additional styles and behavior for this component are located in the following files</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<dl class="dl-horizontal">
+				<dt>Component variables</dt>
+				<dd><code>boostbox/assets/less/shared/variables.less</code><pre class="prettyprint">@login-header-height:			100px;
+@login-body-height:				275px;
+@login-body-width:				500px;
+@login-body-spacer:				25px;
+</pre></dd>
+			</dl>
+		</div>
+	</div>
+	
+	</div>
+<!-- END BOX -->
+		<!-- START ICON -->
+<div class="doc-section">
+	
+	<h1 id="icon" class="page-header">Icons</h1>
+	<p class="lead">
+		In addition to the standard <a class="btn-link" href="http://getbootstrap.com/components/#glyphicons" target="blank">Bootstrap icons <span class="glyphicon glyphicon-link"></span></a>, Boostbox has several additional options.
+	</p>
+	
+	<div class="box box-outlined style-support1">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Additional styles and behavior for this component are located in the following files</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<dl class="dl-horizontal">
+				<dt>Component styles</dt>
+				<dd><code>boostbox/assets/less/boostbox/icons.less</code></dd>
+			</dl>
+		</div>
+	</div>
+	
+	
+	<h3 id="icon-rotation">Icons rotation</h3>
+	<p>
+		To rotate an icon you can use one of the following classes.
+	</p>
+	<div class="box box-outlined style-body">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Example</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<i class="fa fa-bell fa-5x icon-tilt-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<i class="fa fa-bell fa-5x"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<i class="fa fa-bell fa-5x icon-tilt"></i>
+		</div>
+		<pre class="prettyprint">&lt;i class=&quot;fa fa-bell icon-tilt-alt&quot;&gt;&lt;/i&gt; &lt;!-- 10 degrees --&gt;
+&lt;i class=&quot;fa fa-bell&quot;&gt;&lt;/i&gt;
+&lt;i class=&quot;fa fa-bell icon-tilt&quot;&gt;&lt;/i&gt; &lt;!-- 350 degrees --&gt;
+</pre>
+	</div>
+	
+	
+	<h3 id="icon-sizes">Icon sizes</h3>
+	<p>
+		To increase icon sizes relative to their container, use the <code>fa-lg</code> (33% increase), <code>fa-2x</code>, <code>fa-3x</code>, <code>fa-4x</code>, <code>fa-5x</code>,<code>fa-6x</code>, <code>fa-7x</code>, <code>fa-8x</code>, <code>fa-10x</code>, <code>fa-15x</code> or <code>fa-20x</code> classes.
+	</p>
+	<div class="box box-outlined style-body">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Example</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<i class="fa fa-camera-retro fa-lg"></i>
+			<i class="fa fa-camera-retro fa-2x"></i>
+			<i class="fa fa-camera-retro fa-3x"></i>
+			<i class="fa fa-camera-retro fa-4x"></i>
+			<i class="fa fa-camera-retro fa-5x"></i>
+			<i class="fa fa-camera-retro fa-6x"></i>
+			<i class="fa fa-camera-retro fa-7x"></i>
+			<i class="fa fa-camera-retro fa-8x"></i>
+			<i class="fa fa-camera-retro fa-9x"></i><br/>
+			<i class="fa fa-camera-retro fa-10x"></i>
+			<i class="fa fa-camera-retro fa-15x"></i>
+			<i class="fa fa-camera-retro fa-20x"></i>
+		</div>
+		<pre class="prettyprint">&lt;i class=&quot;fa fa-camera-retro fa-lg&quot;&gt;&lt;/i&gt;
+&lt;i class=&quot;fa fa-camera-retro fa-2x&quot;&gt;&lt;/i&gt;
+&lt;i class=&quot;fa fa-camera-retro fa-3x&quot;&gt;&lt;/i&gt;
+&lt;i class=&quot;fa fa-camera-retro fa-4x&quot;&gt;&lt;/i&gt;
+&lt;i class=&quot;fa fa-camera-retro fa-5x&quot;&gt;&lt;/i&gt;
+&lt;i class=&quot;fa fa-camera-retro fa-6x&quot;&gt;&lt;/i&gt;
+&lt;i class=&quot;fa fa-camera-retro fa-7x&quot;&gt;&lt;/i&gt;
+&lt;i class=&quot;fa fa-camera-retro fa-8x&quot;&gt;&lt;/i&gt;
+&lt;i class=&quot;fa fa-camera-retro fa-9x&quot;&gt;&lt;/i&gt;
+&lt;i class=&quot;fa fa-camera-retro fa-10x&quot;&gt;&lt;/i&gt;
+&lt;i class=&quot;fa fa-camera-retro fa-15x&quot;&gt;&lt;/i&gt;
+&lt;i class=&quot;fa fa-camera-retro fa-20x&quot;&gt;&lt;/i&gt;
+</pre>
+	</div>
+	
+	</div>
+<!-- END ICON -->		<!-- START DROPDOWN -->
+<div class="doc-section">
+	
+	<h1 id="dropdown" class="page-header">Dropdowns</h1>
+	<p class="lead">
+		In addition to the standard <a class="btn-link" href="http://getbootstrap.com/components/#dropdowns" target="blank">Bootstrap dropdowns <span class="glyphicon glyphicon-link"></span></a>, Boostbox has several additional options.
+	</p>
+	
+	<div class="box box-outlined style-support1">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Additional styles and behavior for this component are located in the following files</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<dl class="dl-horizontal">
+				<dt>Component styles</dt>
+				<dd><code>boostbox/assets/less/boostbox/dropdowns.less</code></dd>
+			</dl>
+		</div>
+	</div>
+	
+	
+	<h3 id="dropdown-animation">Dropdowns animations</h3>
+	<p>
+		You can add animation to your dropdowns by adding <code>.animation-zoom</code>, <code>.animation-slide</code> or <code>.animation-dock</code>.
+		If you put these classes on a menu that 'drops up', it will adjust the animation.
+	</p>
+	<div class="box box-outlined style-body">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Example</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<div class="btn-group">
+				<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+					Slide dropdown <i class="fa fa-caret-down"></i>
+				</button>
+				<ul class="dropdown-menu animation-slide">
+					<li><a href="#">Item 1</a></li>
+					<li><a href="#">Item 2</a></li>
+					<li><a href="#">Item 3</a></li>
+					<li><a href="#">Item 4</a></li>
+				</ul>
+			</div>
+			<div class="btn-group dropup">
+				<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+					Slide dropup <i class="fa fa-caret-up"></i>
+				</button>
+				<ul class="dropdown-menu animation-slide">
+					<li><a href="#">Item 1</a></li>
+					<li><a href="#">Item 2</a></li>
+					<li><a href="#">Item 3</a></li>
+					<li><a href="#">Item 4</a></li>
+				</ul>
+			</div>
+			<div class="btn-group">
+				<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+					Zoom dropdown <i class="fa fa-caret-down"></i>
+				</button>
+				<ul class="dropdown-menu animation-zoom">
+					<li><a href="#">Item 1</a></li>
+					<li><a href="#">Item 2</a></li>
+					<li><a href="#">Item 3</a></li>
+					<li><a href="#">Item 4</a></li>
+				</ul>
+			</div>
+			<div class="btn-group dropup">
+				<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+					Zoom dropup <i class="fa fa-caret-up"></i>
+				</button>
+				<ul class="dropdown-menu animation-zoom">
+					<li><a href="#">Item 1</a></li>
+					<li><a href="#">Item 2</a></li>
+					<li><a href="#">Item 3</a></li>
+					<li><a href="#">Item 4</a></li>
+				</ul>
+			</div>
+			<div class="btn-group">
+				<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+					Dock dropdown <i class="fa fa-caret-down"></i>
+				</button>
+				<ul class="dropdown-menu animation-dock">
+					<li><a href="#">Item 1</a></li>
+					<li><a href="#">Item 2</a></li>
+					<li><a href="#">Item 3</a></li>
+					<li><a href="#">Item 4</a></li>
+				</ul>
+			</div>
+			<div class="btn-group dropup">
+				<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+					Dock dropup <i class="fa fa-caret-up"></i>
+				</button>
+				<ul class="dropdown-menu animation-dock">
+					<li><a href="#">Item 1</a></li>
+					<li><a href="#">Item 2</a></li>
+					<li><a href="#">Item 3</a></li>
+					<li><a href="#">Item 4</a></li>
+				</ul>
+			</div>
+		</div>
+		<pre class="prettyprint">&lt;ul class=&quot;dropdown-menu animation-slide&quot;&gt;
+	...
+&lt;/ul&gt;
+&lt;ul class=&quot;dropdown-menu animation-zoom&quot;&gt;
+	...
+&lt;/ul&gt;
+&lt;ul class=&quot;dropdown-menu animation-dock&quot;&gt;
+	...
+&lt;/ul&gt;
+</pre>
+	</div>
+	
+	
+	<h3 id="dropdown-progress">Dropdown progress bar</h3>
+	<p>
+		To create a progressbar in your menu, add <code>.dropdown-progress</code> to the <code>&lt;li&gt;</code> element.
+		Add text in the <code>.dropdown-label</code> and put your <code>.progress</code> bar beneath.
+	</p>
+	<div class="box box-outlined style-body">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Example</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<div class="dropdown open">
+				<ul class="dropdown-menu animation-dock">
+					<li class="dropdown-header">Server load</li>
+					<li class="dropdown-progress">
+						<a href="javascript:void(0);">
+							<div class="dropdown-label">
+								<span class="text-light">Server load <strong>Today</strong></span>
+								<strong class="pull-right">93%</strong>
+							</div>
+							<div class="progress"><div class="progress-bar progress-bar-danger" style="width: 93%"></div></div>
+						</a>
+					</li>
+					<li class="dropdown-progress">
+						<a href="javascript:void(0);">
+							<div class="dropdown-label">
+								<span class="text-light">Server load <strong>Yesterday</strong></span>
+								<strong class="pull-right">30%</strong>
+							</div>
+							<div class="progress"><div class="progress-bar progress-bar-success" style="width: 30%"></div></div>
+						</a>
+					</li>
+					<li class="dropdown-progress">
+						<a href="javascript:void(0);">
+							<div class="dropdown-label">
+								<span class="text-light">Server load <strong>Lastweek</strong></span>
+								<strong class="pull-right">74%</strong>
+							</div>
+							<div class="progress"><div class="progress-bar progress-bar-warning" style="width: 74%"></div></div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+		</div>
+		<pre class="prettyprint">&lt;li class=&quot;dropdown-progress&quot;&gt;
+	&lt;a href=&quot;#&quot;&gt;
+		&lt;div class=&quot;dropdown-label&quot;&gt;Label&lt;/div&gt;
+		&lt;div class=&quot;progress&quot;&gt;&lt;div class=&quot;progress-bar progress-bar-success&quot; style=&quot;width: 30%&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+	&lt;/a&gt;
+&lt;/li&gt;
+</pre>
+	</div>
+	
+	</div>
+<!-- END DROPDOWN -->		<!-- START BUTTONS -->
+<div class="doc-section">
+	
+	<h1 id="buttons" class="page-header">Buttons</h1>
+	<p class="lead">
+		In addition to the standard <a class="btn-link" href="http://getbootstrap.com/css/#buttons" target="blank">Bootstrap buttons <span class="glyphicon glyphicon-link"></span></a>, Boostbox has several additional options.
+	</p>
+	
+	<div class="box box-outlined style-support1">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Additional styles and behavior for this component are located in the following files</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<dl class="dl-horizontal">
+				<dt>Component styles</dt>
+				<dd><code>boostbox/assets/less/boostbox/buttons.less</code></dd>
+			</dl>
+		</div>
+	</div>
+	
+	
+	<h3 id="buttons-check-styles">Styling Checkboxes</h3>
+	<p>
+		Add <code>data-toggle="buttons"</code> to one or more checkboxes for a different style.
+		You can give it several styles.
+		In the example below it has a style <code>.btn-checkbox-primary</code> applied to it.
+	</p>
+	<p>
+		If you want your checkbox to be selected on load, apply the <code>.active</code> class to your <code>.btn</code>.
+	</p>
+	<div class="box box-outlined style-body">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Example</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<div data-toggle="buttons">
+				<label class="btn btn-checkbox-primary active">
+					<input type="checkbox" name="checkbox1" value="1"> Checkbox 1
+				</label>
+			</div>
+			<div data-toggle="buttons">
+				<label class="btn btn-checkbox-primary">
+					<input type="checkbox" name="checkbox2" value="1"> Checkbox 2
+				</label>
+			</div>
+		</div>
+		<pre class="prettyprint">&lt;div data-toggle=&quot;buttons&quot;&gt;
+	&lt;label class=&quot;btn btn-checkbox-default active&quot;&gt;
+		&lt;input type=&quot;checkbox&quot; name=&quot;checkbox1&quot; value=&quot;1&quot;&gt; Checkbox 1
+	&lt;/label&gt;
+&lt;/div&gt;
+&lt;div data-toggle=&quot;buttons&quot;&gt;
+	&lt;label class=&quot;btn btn-checkbox-primary&quot;&gt;
+		&lt;input type=&quot;checkbox&quot; name=&quot;checkbox2&quot; value=&quot;1&quot;&gt; Checkbox 2
+	&lt;/label&gt;
+&lt;/div&gt;
+</pre>
+	</div>
+	
+	
+	<h3 id="buttons-check-colors">Checkbox colors</h3>
+	<p>
+		There are several colors for you to choose from.
+	</p>
+	<div class="box box-outlined style-body">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Example</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<div data-toggle="buttons">
+				<label class="btn checkbox-inline btn-checkbox-default active">
+					<input type="checkbox" value="default"> Checkbox
+				</label>
+				<label class="btn checkbox-inline btn-checkbox-primary active">
+					<input type="checkbox" value="primary"> Checkbox
+				</label>
+				<label class="btn checkbox-inline btn-checkbox-success active">
+					<input type="checkbox" value="success"> Checkbox
+				</label>
+				<label class="btn checkbox-inline btn-checkbox-warning active">
+					<input type="checkbox" value="warning"> Checkbox
+				</label>
+				<label class="btn checkbox-inline btn-checkbox-danger active">
+					<input type="checkbox" value="danger"> Checkbox
+				</label>
+				<label class="btn checkbox-inline btn-checkbox-info active">
+					<input type="checkbox" value="info"> Checkbox
+				</label>
+				<br/>
+				<label class="btn checkbox-inline btn-checkbox-default-inverse active">
+					<input type="checkbox" value="default-inverse"> Checkbox
+				</label>
+				<label class="btn checkbox-inline btn-checkbox-primary-inverse active">
+					<input type="checkbox" value="primary-inverse"> Checkbox
+				</label>
+				<label class="btn checkbox-inline btn-checkbox-success-inverse active">
+					<input type="checkbox" value="success-inverse"> Checkbox
+				</label>
+				<label class="btn checkbox-inline btn-checkbox-warning-inverse active">
+					<input type="checkbox" value="warning-inverse"> Checkbox
+				</label>
+				<label class="btn checkbox-inline btn-checkbox-danger-inverse active">
+					<input type="checkbox" value="danger-inverse"> Checkbox
+				</label>
+				<label class="btn checkbox-inline btn-checkbox-info-inverse active">
+					<input type="checkbox" value="info-inverse"> Checkbox
+				</label>
+			</div>
+		</div>
+		<pre class="prettyprint">&lt;div data-toggle=&quot;buttons&quot;&gt;
+	&lt;label class=&quot;btn btn-checkbox-default&quot;&gt;...&lt;/label&gt;
+	&lt;label class=&quot;btn btn-checkbox-default&quot;&gt;...&lt;/label&gt;
+	&lt;label class=&quot;btn btn-checkbox-primary&quot;&gt;...&lt;/label&gt;
+	&lt;label class=&quot;btn btn-checkbox-success&quot;&gt;...&lt;/label&gt;
+	&lt;label class=&quot;btn btn-checkbox-warning&quot;&gt;...&lt;/label&gt;
+	&lt;label class=&quot;btn btn-checkbox-danger&quot;&gt;...&lt;/label&gt;
+	&lt;label class=&quot;btn btn-checkbox-info&quot;&gt;...&lt;/label&gt;
+	&lt;label class=&quot;btn btn-checkbox-default-inverse&quot;&gt;...&lt;/label&gt;
+	&lt;label class=&quot;btn btn-checkbox-primary-inverse&quot;&gt;...&lt;/label&gt;
+	&lt;label class=&quot;btn btn-checkbox-success-inverse&quot;&gt;...&lt;/label&gt;
+	&lt;label class=&quot;btn btn-checkbox-warning-inverse&quot;&gt;...&lt;/label&gt;
+	&lt;label class=&quot;btn btn-checkbox-danger-inverse&quot;&gt;...&lt;/label&gt;
+	&lt;label class=&quot;btn btn-checkbox-info-inverse&quot;&gt;...&lt;/label&gt;
+&lt;/div&gt;
+</pre>
+	</div>
+	
+	
+	<h3 id="buttons-radio-styles">Styling Radiobuttons</h3>
+	<p>
+		Add <code>data-toggle="buttons"</code> to one or more radiobuttons for a different style.
+		You can give it several styles.
+		In the example below it has a style <code>.btn-radio-primary</code> applied to it.
+	</p>
+	<p>
+		If you want your radiobutton to be selected on load, apply the <code>.active</code> class to your <code>.btn</code>.
+	</p>
+	<div class="box box-outlined style-body">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Example</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<div data-toggle="buttons">
+				<label class="btn radio-inline btn-radio-primary active">
+					<input type="radio" name="radio1" value="1"> Checkbox 1
+				</label>
+				<label class="btn radio-inline btn-radio-primary">
+					<input type="radio" name="radio2" value="1"> Checkbox 2
+				</label>
+			</div>
+		</div>
+		<pre class="prettyprint">&lt;div data-toggle=&quot;buttons&quot;&gt;
+	&lt;label class=&quot;btn radio-inline btn-radio-primary active&quot;&gt;
+		&lt;input type=&quot;radio&quot; name=&quot;radio1&quot; value=&quot;1&quot;&gt; Checkbox 1
+	&lt;/label&gt;
+	&lt;label class=&quot;btn radio-inline btn-radio-primary&quot;&gt;
+		&lt;input type=&quot;radio&quot; name=&quot;radio2&quot; value=&quot;1&quot;&gt; Checkbox 2
+	&lt;/label&gt;
+&lt;/div&gt;
+</pre>
+	</div>
+	
+	
+	<h3 id="buttons-radio-colors">Radiobutton colors</h3>
+	<p>
+		There are several colors for you to choose from.
+	</p>
+	<div class="box box-outlined style-body">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Example</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<div data-toggle="buttons">
+				<label class="btn radio-inline btn-radio-default active">
+					<input type="radio" value="default"> Checkbox
+				</label>
+				<label class="btn radio-inline btn-radio-primary active">
+					<input type="radio" value="primary"> Checkbox
+				</label>
+				<label class="btn radio-inline btn-radio-success active">
+					<input type="radio" value="success"> Checkbox
+				</label>
+				<label class="btn radio-inline btn-radio-warning active">
+					<input type="radio" value="warning"> Checkbox
+				</label>
+				<label class="btn radio-inline btn-radio-danger active">
+					<input type="radio" value="danger"> Checkbox
+				</label>
+				<label class="btn radio-inline btn-radio-info active">
+					<input type="radio" value="info"> Checkbox
+				</label>
+				<br/>
+				<label class="btn radio-inline btn-radio-default-inverse active">
+					<input type="radio" value="default-inverse"> Checkbox
+				</label>
+				<label class="btn radio-inline btn-radio-primary-inverse active">
+					<input type="radio" value="primary-inverse"> Checkbox
+				</label>
+				<label class="btn radio-inline btn-radio-success-inverse active">
+					<input type="radio" value="success-inverse"> Checkbox
+				</label>
+				<label class="btn radio-inline btn-radio-warning-inverse active">
+					<input type="radio" value="warning-inverse"> Checkbox
+				</label>
+				<label class="btn radio-inline btn-radio-danger-inverse active">
+					<input type="radio" value="danger-inverse"> Checkbox
+				</label>
+				<label class="btn radio-inline btn-radio-info-inverse active">
+					<input type="radio" value="info-inverse"> Checkbox
+				</label>
+			</div>
+		</div>
+		<pre class="prettyprint">&lt;div data-toggle=&quot;buttons&quot;&gt;
+	&lt;label class=&quot;btn btn-radio-default&quot;&gt;...&lt;/label&gt;
+	&lt;label class=&quot;btn btn-radio-default&quot;&gt;...&lt;/label&gt;
+	&lt;label class=&quot;btn btn-radio-primary&quot;&gt;...&lt;/label&gt;
+	&lt;label class=&quot;btn btn-radio-success&quot;&gt;...&lt;/label&gt;
+	&lt;label class=&quot;btn btn-radio-warning&quot;&gt;...&lt;/label&gt;
+	&lt;label class=&quot;btn btn-radio-danger&quot;&gt;...&lt;/label&gt;
+	&lt;label class=&quot;btn btn-radio-info&quot;&gt;...&lt;/label&gt;
+	&lt;label class=&quot;btn btn-radio-default-inverse&quot;&gt;...&lt;/label&gt;
+	&lt;label class=&quot;btn btn-radio-primary-inverse&quot;&gt;...&lt;/label&gt;
+	&lt;label class=&quot;btn btn-radio-success-inverse&quot;&gt;...&lt;/label&gt;
+	&lt;label class=&quot;btn btn-radio-warning-inverse&quot;&gt;...&lt;/label&gt;
+	&lt;label class=&quot;btn btn-radio-danger-inverse&quot;&gt;...&lt;/label&gt;
+	&lt;label class=&quot;btn btn-radio-info-inverse&quot;&gt;...&lt;/label&gt;
+&lt;/div&gt;
+</pre>
+	</div>
+	
+	</div>
+<!-- END BUTTONS -->		<!-- START DROPDOWN -->
+<div class="doc-section">
+	
+	<h1 id="badges" class="page-header">Badges</h1>
+	<p class="lead">
+		In addition to the standard <a class="btn-link" href="http://getbootstrap.com/components/#badges" target="blank">Bootstrap badges <span class="glyphicon glyphicon-link"></span></a>, Boostbox has several additional options.
+	</p>
+	
+	<div class="box box-outlined style-support1">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Additional styles and behavior for this component are located in the following files</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<dl class="dl-horizontal">
+				<dt>Component styles</dt>
+				<dd><code>boostbox/assets/less/boostbox/badges.less</code></dd>
+			</dl>
+		</div>
+	</div>
+	
+	
+	<h3 id="badges-colors">Badge colors</h3>
+	<p>
+		Use any of the available badge classes to color a <code>.badge</code>.
+	</p>
+	<div class="box box-outlined style-body">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Example</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<div class="row">
+				<div class="col-lg-4">
+					<p><a href="#">Badge <span class="badge">Default</span></a></p>
+					<p><a href="#">Badge <span class="badge badge-black">black</span></a></p>
+					<p><a href="#">Badge <span class="badge badge-white">white</span></a></p>
+					<p><a href="#">Badge <span class="badge badge-gray">gray</span></a></p>
+					<p><a href="#">Badge <span class="badge badge-inverse">inverse</span></a></p>
+				</div>
+				<div class="col-lg-4">
+					<p><a href="#">Badge <span class="badge badge-primary">primary</span></a></p>
+					<p><a href="#">Badge <span class="badge badge-success">success</span></a></p>
+					<p><a href="#">Badge <span class="badge badge-warning">warning</span></a></p>
+					<p><a href="#">Badge <span class="badge badge-danger">danger</span></a></p>
+					<p><a href="#">Badge <span class="badge badge-info">info</span></a></p>
+				</div>
+				<div class="col-lg-4">
+					<p><a href="#">Badge <span class="badge badge-support1">support1</span></a></p>
+					<p><a href="#">Badge <span class="badge badge-support2">support2</span></a></p>
+					<p><a href="#">Badge <span class="badge badge-support3">support3</span></a></p>
+					<p><a href="#">Badge <span class="badge badge-support4">support4</span></a></p>
+					<p><a href="#">Badge <span class="badge badge-support5">support5</span></a></p>
+				</div>
+			</div>
+		</div>
+		<pre class="prettyprint">&lt;a href=&quot;#&quot;&gt;Badge &lt;span class=&quot;badge&quot;&gt;Default&lt;/span&gt;&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;Badge &lt;span class=&quot;badge badge-black&quot;&gt;black&lt;/span&gt;&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;Badge &lt;span class=&quot;badge badge-white&quot;&gt;white&lt;/span&gt;&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;Badge &lt;span class=&quot;badge badge-gray&quot;&gt;gray&lt;/span&gt;&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;Badge &lt;span class=&quot;badge badge-inverse&quot;&gt;inverse&lt;/span&gt;&lt;/a&gt;
+
+&lt;a href=&quot;#&quot;&gt;Badge &lt;span class=&quot;badge badge-primary&quot;&gt;primary&lt;/span&gt;&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;Badge &lt;span class=&quot;badge badge-success&quot;&gt;success&lt;/span&gt;&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;Badge &lt;span class=&quot;badge badge-warning&quot;&gt;warning&lt;/span&gt;&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;Badge &lt;span class=&quot;badge badge-danger&quot;&gt;danger&lt;/span&gt;&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;Badge &lt;span class=&quot;badge badge-info&quot;&gt;info&lt;/span&gt;&lt;/a&gt;
+
+&lt;a href=&quot;#&quot;&gt;Badge &lt;span class=&quot;badge badge-support1&quot;&gt;support1&lt;/span&gt;&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;Badge &lt;span class=&quot;badge badge-support2&quot;&gt;support2&lt;/span&gt;&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;Badge &lt;span class=&quot;badge badge-support3&quot;&gt;support3&lt;/span&gt;&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;Badge &lt;span class=&quot;badge badge-support4&quot;&gt;support4&lt;/span&gt;&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;Badge &lt;span class=&quot;badge badge-support5&quot;&gt;support5&lt;/span&gt;&lt;/a&gt;
+</pre>
+	</div>
+	
+	
+	<h3 id="badges-position">Badge positioning</h3>
+	<p>
+		Use <code>&lt;sup&gt;</code> instead of <code>&lt;span&gt;</code> to position the badge <strong>above</strong> the baseline. Use <code>&lt;sub&gt;</code> instead of <code>&lt;span&gt;</code> to position the badge <strong>below</strong> the baseline.
+	</p>
+	<div class="box box-outlined style-body">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Example</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<p>
+				<a href="#" class=""><sup class="badge badge-support2">sup</sup> Badge</a>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="#" class="">Badge <sup class="badge badge-support2">sup</sup></a>
+			</p>
+			<p>&nbsp;</p>
+			<p>
+				<a href="#" class=""><sub class="badge badge-support2">sub</sub> Badge</a>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="#" class="">Badge <sub class="badge badge-support2">sub</sub></a>
+			</p>
+		</div>
+		<pre class="prettyprint">&lt;a href=&quot;#&quot; class=&quot;&quot;&gt;&lt;sup class=&quot;badge badge-support2&quot;&gt;sup&lt;/sup&gt; Badge&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;&quot;&gt;Badge &lt;sup class=&quot;badge badge-support2&quot;&gt;sup&lt;/sup&gt;&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;&quot;&gt;&lt;sub class=&quot;badge badge-support2&quot;&gt;sub&lt;/sub&gt; Badge&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;&quot;&gt;Badge &lt;sub class=&quot;badge badge-support2&quot;&gt;sub&lt;/sub&gt;&lt;/a&gt;
+</pre>
+	</div>
+	
+	</div>
+<!-- END DROPDOWN -->		<!-- START DROPDOWN -->
+<div class="doc-section">
+	
+	<h1 id="lists" class="page-header">Lists</h1>
+	<p class="lead">
+		In addition to the standard <a class="btn-link" href="http://getbootstrap.com/components/#list-group" target="blank">Bootstrap lists <span class="glyphicon glyphicon-link"></span></a>, Boostbox has several additional options.
+	</p>
+	
+	<div class="box box-outlined style-support1">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Additional styles and behavior for this component are located in the following files</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<dl class="dl-horizontal">
+				<dt>Component styles</dt>
+				<dd><code>boostbox/assets/less/boostbox/list-group.less</code></dd>
+			</dl>
+		</div>
+	</div>
+	
+	
+	<h3 id="lists-colors">List colors</h3>
+	<p>
+		Use any of the available list classes to create a colored list.
+	</p>
+	<div class="box box-outlined style-body">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Example</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<div class="row">
+				<div class="col-sm-2">
+					<ul class="list-group list-primary">
+						<li class="list-group-item active">primary</li>
+						<li class="list-group-item">Regular</li>
+						<li class="list-group-item">Regular</li>
+					</ul>
+				</div>
+				<div class="col-sm-2">
+					<ul class="list-group list-success">
+						<li class="list-group-item active">success</li>
+						<li class="list-group-item">Regular</li>
+						<li class="list-group-item">Regular</li>
+					</ul>
+				</div>
+				<div class="col-sm-2">
+					<ul class="list-group list-warning">
+						<li class="list-group-item active">warning</li>
+						<li class="list-group-item">Regular</li>
+						<li class="list-group-item">Regular</li>
+					</ul>
+				</div>
+				<div class="col-sm-2">
+					<ul class="list-group list-danger">
+						<li class="list-group-item active">danger</li>
+						<li class="list-group-item">Regular</li>
+						<li class="list-group-item">Regular</li>
+					</ul>
+				</div>
+				<div class="col-sm-2">
+					<ul class="list-group list-info">
+						<li class="list-group-item active">info</li>
+						<li class="list-group-item">Regular</li>
+						<li class="list-group-item">Regular</li>
+					</ul>
+				</div>
+				<div class="col-sm-2">
+				</div>
+			</div>
+			<br/>
+			<div class="row">
+				<div class="col-sm-2">
+					<ul class="list-group list-support1">
+						<li class="list-group-item active">support1</li>
+						<li class="list-group-item">Regular</li>
+						<li class="list-group-item">Regular</li>
+					</ul>
+				</div>
+				<div class="col-sm-2">
+					<ul class="list-group list-support2">
+						<li class="list-group-item active">support2</li>
+						<li class="list-group-item">Regular</li>
+						<li class="list-group-item">Regular</li>
+					</ul>
+				</div>
+				<div class="col-sm-2">
+					<ul class="list-group list-support3">
+						<li class="list-group-item active">support3</li>
+						<li class="list-group-item">Regular</li>
+						<li class="list-group-item">Regular</li>
+					</ul>
+				</div>
+				<div class="col-sm-2">
+					<ul class="list-group list-support4">
+						<li class="list-group-item active">support4</li>
+						<li class="list-group-item">Regular</li>
+						<li class="list-group-item">Regular</li>
+					</ul>
+				</div>
+				<div class="col-sm-2">
+					<ul class="list-group list-support5">
+						<li class="list-group-item active">support5</li>
+						<li class="list-group-item">Regular</li>
+						<li class="list-group-item">Regular</li>
+					</ul>
+				</div>
+				<div class="col-sm-2">
+				</div>
+			</div>
+			<br/>
+			<div class="row">
+				<div class="col-sm-2">
+					<ul class="list-group list-black">
+						<li class="list-group-item active">black</li>
+						<li class="list-group-item">Regular</li>
+						<li class="list-group-item">Regular</li>
+					</ul>
+				</div>
+				<div class="col-sm-2">
+					<ul class="list-group list-white">
+						<li class="list-group-item active">white</li>
+						<li class="list-group-item">Regular</li>
+						<li class="list-group-item">Regular</li>
+					</ul>
+				</div>
+				<div class="col-sm-2">
+					<ul class="list-group list-gray">
+						<li class="list-group-item active">gray</li>
+						<li class="list-group-item">Regular</li>
+						<li class="list-group-item">Regular</li>
+					</ul>
+				</div>
+				<div class="col-sm-2">
+					<ul class="list-group list-inverse">
+						<li class="list-group-item active">inverse</li>
+						<li class="list-group-item">Regular</li>
+						<li class="list-group-item">Regular</li>
+					</ul>
+				</div>
+				<div class="col-sm-2">
+					<ul class="list-group list-body">
+						<li class="list-group-item active">body</li>
+						<li class="list-group-item">Regular</li>
+						<li class="list-group-item">Regular</li>
+					</ul>
+				</div>
+				<div class="col-sm-2">
+				</div>
+			</div>
+		</div>
+		<pre class="prettyprint">&lt;ul class=&quot;list-group list-primary&quot;&gt;...&lt;/ul&gt;
+&lt;ul class=&quot;list-group list-success&quot;&gt;...&lt;/ul&gt;
+&lt;ul class=&quot;list-group list-warning&quot;&gt;...&lt;/ul&gt;
+&lt;ul class=&quot;list-group list-danger&quot;&gt;...&lt;/ul&gt;
+&lt;ul class=&quot;list-group list-info&quot;&gt;...&lt;/ul&gt;
+
+&lt;ul class=&quot;list-group list-support1&quot;&gt;...&lt;/ul&gt;
+&lt;ul class=&quot;list-group list-support2&quot;&gt;...&lt;/ul&gt;
+&lt;ul class=&quot;list-group list-support3&quot;&gt;...&lt;/ul&gt;
+&lt;ul class=&quot;list-group list-support4&quot;&gt;...&lt;/ul&gt;
+&lt;ul class=&quot;list-group list-support5&quot;&gt;...&lt;/ul&gt;
+
+&lt;ul class=&quot;list-group list-black&quot;&gt;...&lt;/ul&gt;
+&lt;ul class=&quot;list-group list-white&quot;&gt;...&lt;/ul&gt;
+&lt;ul class=&quot;list-group list-gray&quot;&gt;...&lt;/ul&gt;
+&lt;ul class=&quot;list-group list-inverse&quot;&gt;...&lt;/ul&gt;
+&lt;ul class=&quot;list-group list-body&quot;&gt;...&lt;/ul&gt;
+</pre>
+	</div>
+	
+	
+	<h3 id="lists-task">Comments list</h3>
+	<h4>Basics</h4>
+	<p>
+		The comments list is basically a <code>.box</code> element wrapped in an <code>&lt;ul&gt;</code> list with the class <code>.list-comments</code>.
+	</p>
+	<p>
+		Because the comments are wrapped inside a <code>.box</code>, you can use any <code>.style-*</code> class to color your comments.
+	</p>
+	<p>
+		Comments have additional classes to create different elements for the comment.<br/>
+		First there's the <code>.comment-avatar</code> class to contain the avatar. 
+		The avatar will be placed in front of the text. The avatar can be any icon or image you like.<br/>
+		Second there's the <code>.comment-title</code> class which has some modifications to the margins.
+	</p>
+	<div class="box box-outlined style-body">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Example</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			
+			<ul class="list-comments">
+				<li>
+					<div class="box style-body">
+						<div class="comment-avatar"><i class="glyphicon glyphicon-user text-gray"></i></div>
+						<div class="box-body">
+							<h4 class="comment-title">Comment title <small>20/06/2013 at 4:02 pm</small></h4>
+							<a class="btn btn-inverse stick-top-right" href="#respond">Reply</a>
+							<p>Etiam dui libero, tempor quis congue in, interdum eget tortor. Vivamus aliquam dictum lacus quis tincidunt. Phasellus rhoncus ante sollicitudin nisl consectetur ultricies. Sed rhoncus ullamcorper mauris, ac condimentum metus egestas ut. Nam et urna ante, vitae pretium lacus.</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="box style-inverse">
+						<div class="comment-avatar"><img class="img-circle" src="../assets/img/avatar1.jpg?1401297311" alt="" /></div>
+						<div class="box-body">
+							<h4 class="comment-title">Comment title <small>20/06/2013 at 4:38 pm</small></h4>
+							<a class="btn btn-inverse stick-top-right" href="#respond">Reply</a>
+							<p>Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer ac magna lacinia velit bibendum ornare. Morbi eget dui lectus, eget eleifend mi.</p>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+		</div>
+		<pre class="prettyprint">&lt;ul class=&quot;list-comments&quot;&gt;
+	&lt;li&gt;
+		&lt;div class=&quot;box style-body&quot;&gt;
+			&lt;div class=&quot;comment-avatar&quot;&gt;&lt;i class=&quot;glyphicon glyphicon-user text-gray&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+			&lt;div class=&quot;box-body&quot;&gt;
+				&lt;h4 class=&quot;comment-title&quot;&gt;Comment title &lt;small&gt;20/06/2013 at 4:02 pm&lt;/small&gt;&lt;/h4&gt;
+				&lt;a class=&quot;btn btn-inverse stick-top-right&quot; href=&quot;#&quot;&gt;Reply&lt;/a&gt;
+				&lt;p&gt;...&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;div class=&quot;box style-inverse&quot;&gt;
+			&lt;div class=&quot;comment-avatar&quot;&gt;&lt;img class=&quot;img-circle&quot; src=&quot;...&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;
+			&lt;div class=&quot;box-body&quot;&gt;
+				&lt;h4 class=&quot;comment-title&quot;&gt;Comment title &lt;small&gt;20/06/2013 at 4:38 pm&lt;/small&gt;&lt;/h4&gt;
+				&lt;a class=&quot;btn btn-inverse stick-top-right&quot; href=&quot;#&quot;&gt;Reply&lt;/a&gt;
+				&lt;p&gt;...&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+	</div>
+	
+	<br/>
+	<h4>Replies</h4>
+	<p>
+		You can add a reply style by putting another <code>&lt;ul&gt;</code> list inside a <code>&lt;li&gt;</code> tag.
+		This will add a vertical stripe which indicates it's a reply.
+		You can nest as many as you want.
+	</p>
+<div class="box box-outlined style-body">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Example</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			
+			<ul class="list-comments">
+				<li>
+					<div class="box style-body">
+						<div class="comment-avatar"><span class="glyphicon glyphicon-user text-gray"></span></div>
+						<div class="box-body">
+							<h4 class="comment-title">Carol	Sharp <small>20/06/2013 at 4:14 pm</small></h4>
+							<a class="btn btn-inverse stick-top-right" href="#respond">Reply</a>
+							<p>Integer ac magna lacinia velit bibendum ornare. Morbi eget dui lectus, eget eleifend mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+						</div>
+					</div>
+					<ul>
+						<li>
+							<div class="box style-body">
+								<div class="comment-avatar"><span class="glyphicon glyphicon-user text-gray"></span></div>
+								<div class="box-body">
+									<h4 class="comment-title">Amber Page <small>20/06/2013 at 4:41 pm</small></h4>
+									<a class="btn btn-inverse stick-top-right" href="#respond">Reply</a>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in tempus lorem. Vivamus ullamcorper leo risus, non vehicula odio.</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			
+		</div>
+		<pre class="prettyprint">&lt;ul class=&quot;list-comments&quot;&gt;
+	&lt;li&gt;
+		&lt;div class=&quot;box style-body&quot;&gt;...&lt;/div&gt;
+		&lt;ul&gt;
+			&lt;li&gt;
+				&lt;div class=&quot;box style-body&quot;&gt;...&lt;/div&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+	</div>
+	
+	
+	
+	<h3 id="lists-tags">Tags list</h3>
+	<p>
+		The <code>.list-tags</code> class is a very simple class.
+		It creates an even gap horizontal and vertical between the buttons. 
+		This way it looks good when there are a lot of buttons.
+	</p>
+	<div class="box box-outlined style-body">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Example</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<div class="list-tags">
+				<a class="btn btn-xs btn-support1">Wordpress</a> 
+				<a class="btn btn-xs btn-support1">Technology</a> 
+				<a class="btn btn-xs btn-support1">HTML5</a> 
+				<a class="btn btn-xs btn-support1">Illustrator</a>
+				<br/>
+				<a class="btn btn-xs btn-support1">Music</a>
+				<a class="btn btn-xs btn-support1">CSS3</a> 
+				<a class="btn btn-xs btn-support1">Video</a> 
+				<a class="btn btn-xs btn-support1">Photoshop</a> 
+				<a class="btn btn-xs btn-support1">jQuery</a> 
+			</div>
+		</div>
+		<pre class="prettyprint">&lt;div class=&quot;list-tags&quot;&gt;
+	&lt;a class=&quot;btn btn-xs btn-support1&quot;&gt;Wordpress&lt;/a&gt; 
+	&lt;a class=&quot;btn btn-xs btn-support1&quot;&gt;Technology&lt;/a&gt; 
+	&lt;a class=&quot;btn btn-xs btn-support1&quot;&gt;HTML5&lt;/a&gt; 
+	&lt;a class=&quot;btn btn-xs btn-support1&quot;&gt;Illustrator&lt;/a&gt;
+	&lt;br/&gt;
+	&lt;a class=&quot;btn btn-xs btn-support1&quot;&gt;Music&lt;/a&gt; 
+	&lt;a class=&quot;btn btn-xs btn-support1&quot;&gt;CSS3&lt;/a&gt; 
+	&lt;a class=&quot;btn btn-xs btn-support1&quot;&gt;Video&lt;/a&gt; 
+	&lt;a class=&quot;btn btn-xs btn-support1&quot;&gt;Photoshop&lt;/a&gt; 
+	&lt;a class=&quot;btn btn-xs btn-support1&quot;&gt;jQuery&lt;/a&gt; 
+&lt;/div&gt;
+</pre>
+	</div>
+	
+	</div>
+<!-- END DROPDOWN -->		<!-- START TABBAR -->
+<div class="doc-section">
+	
+	<h1 id="tabs" class="page-header">Tabs</h1>
+	<p class="lead">
+		In addition to the standard <a class="btn-link" href="http://getbootstrap.com/components/#nav-tabs" target="blank">Bootstrap tabs <span class="glyphicon glyphicon-link"></span></a>, Boostbox has several additional options.
+	</p>
+	
+	<div class="box box-outlined style-support1">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Additional styles and behavior for this component are located in the following files</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<dl class="dl-horizontal">
+				<dt>Component styles</dt>
+				<dd><code>boostbox/assets/less/boostbox/tabbar.less</code></dd>
+			</dl>
+		</div>
+	</div>
+	
+	
+		<h3 id="tabs-structure">General structure</h3>
+	<p>
+		Place the <code>.nav-tabs</code> in the <code>.box-head</code>.
+		Add <code>.tab-content</code> to the <code>.box-body</code>, then place the <code>.tab-pane</code> inside the <code>.box-body</code>. 
+	</p>
+	<div class="box style-body">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Example</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<div class="box">
+				<div class="box-head">
+					<ul class="nav nav-tabs pull-left" data-toggle="tabs">
+						<li class="active"><a href="#home1">Home</a></li>
+						<li><a href="#about1">About</a></li>
+						<li><a href="#contact1">Contact</a></li>
+					</ul>
+				</div>
+				<div class="box-body tab-content">
+					<div class="tab-pane active" id="home1">1 ...</div>
+					<div class="tab-pane" id="about1">2 ...</div>
+					<div class="tab-pane" id="contact1">3 ...</div>
+				</div>
+			</div>
+		</div>
+		<pre class="prettyprint">&lt;div class=&quot;box&quot;&gt;
+	&lt;div class=&quot;box-head&quot;&gt;
+		&lt;ul class=&quot;nav nav-tabs&quot; data-toggle=&quot;tabs&quot;&gt;
+			&lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#home&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;box-body tab-content&quot;&gt;
+		&lt;div class=&quot;tab-pane active&quot; id=&quot;home&quot;&gt;1 ...&lt;/div&gt;
+		&lt;div class=&quot;tab-pane&quot; id=&quot;about&quot;&gt;2 ...&lt;/div&gt;
+		&lt;div class=&quot;tab-pane&quot; id=&quot;contact&quot;&gt;3 ...&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+	</div>
+
+	
+		<h3 id="tabs-pullright">Tab pull right</h3>
+	<p>
+		If you add <code>.pull-right</code> to your <code>.nav-tabs</code>, you have room to add a <code>&lt;header&gt;</code>.
+	</p>
+	<div class="box style-body">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Example</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<div class="box">
+				<div class="box-head">
+					<header><h4 class="text-light">Header</h4></header>
+					<ul class="nav nav-tabs pull-right" data-toggle="tabs">
+						<li class="active"><a href="#home2">Home</a></li>
+						<li><a href="#about2">About</a></li>
+						<li><a href="#contact2">Contact</a></li>
+					</ul>
+				</div>
+				<div class="box-body tab-content">
+					<div class="tab-pane active" id="home2">1 ...</div>
+					<div class="tab-pane" id="about2">2 ...</div>
+					<div class="tab-pane" id="contact2">3 ...</div>
+				</div>
+			</div>
+		</div>
+		<pre class="prettyprint">&lt;div class=&quot;box&quot;&gt;
+	&lt;div class=&quot;box-head&quot;&gt;
+		&lt;header&gt;
+			&lt;h4 class=&quot;text-light&quot;&gt;Header&lt;/h4&gt;
+		&lt;/header&gt;
+		&lt;ul class=&quot;nav nav-tabs pull-right&quot; data-toggle=&quot;tabs&quot;&gt;
+			...
+		&lt;/ul&gt;
+	&lt;/div&gt;
+	...
+&lt;/div&gt;
+</pre>
+	</div>
+	
+	
+		<h3 id="tabs-pullleft">Tab pull left</h3>
+	<p>
+		If you add <code>.pull-left</code> to your <code>.nav-tabs</code>, you have room to add <code>.tools</code> to the header.
+	</p>
+	<div class="box style-body">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Example</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<div class="box">
+				<div class="box-head">
+					<ul class="nav nav-tabs pull-left" data-toggle="tabs">
+						<li class="active"><a href="#home3">Home</a></li>
+						<li><a href="#about3">About</a></li>
+						<li><a href="#contact3">Contact</a></li>
+					</ul>
+					<div class="tools">
+						<div class="btn-group btn-group-transparent">
+							<a class="btn btn-equal btn-sm btn-refresh"><i class="fa fa-refresh"></i></a>
+							<a class="btn btn-equal btn-sm btn-collapse"><i class="fa fa-angle-down"></i></a>
+							<a class="btn btn-equal btn-sm btn-close"><i class="fa fa-times"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="box-body tab-content">
+					<div class="tab-pane active" id="home3">1 ...</div>
+					<div class="tab-pane" id="about3">2 ...</div>
+					<div class="tab-pane" id="contact3">3 ...</div>
+				</div>
+			</div>
+		</div>
+		<pre class="prettyprint">&lt;div class=&quot;box&quot;&gt;
+	&lt;div class=&quot;box-head&quot;&gt;
+		&lt;ul class=&quot;nav nav-tabs pull-left&quot; data-toggle=&quot;tabs&quot;&gt;
+			...
+		&lt;/ul&gt;
+		&lt;div class=&quot;tools&quot;&gt;
+			...
+		&lt;/div&gt;
+	&lt;/div&gt;
+	...
+&lt;/div&gt;
+</pre>
+	</div>
+	
+	
+		<h3 id="tabs-position">Tab positioning</h3>
+	<p>
+		If you want to position the tabs left, right or below your content, you have to add the <code>&lt;ul&gt;</code> tag directly to your <code>.box</code>.
+		Then add <code>.tabs-left</code>, <code>.tabs-right</code> or <code>.tabs-below</code> to the <code>.box</code> class to position the tabs relative to their content.
+	</p>
+	<div class="alert alert-info">
+		If you use <code>.tabs-below</code>, place your <code>&lt;ul&gt;</code> below the main content.
+	</div>
+	<div class="box style-body">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Example</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<div class="box tabs-left style-transparent">
+				<ul class="box-head nav nav-tabs" data-toggle="tabs">
+					<li><a href="#personal4">Personal details</a></li>
+					<li class="active"><a href="#about4">About us</a></li>
+					<li><a href="#favorites4">Favorites</a></li>
+				</ul>
+				<div class="box-body tab-content style-white">
+					<div class="tab-pane" id="personal4">			<h3 class="text-light">Daniel <strong>Johnson</strong></h3>
+								<p>Ad ius duis dissentiunt, an sit harum primis persecuti, adipisci tacimates mediocrem sit et. Id illud voluptaria omittantur qui, te affert nostro mel. Cu conceptam vituperata temporibus has.</p>
+			
+		<dl class="dl-horizontal">
+			<dt>Description lists</dt>
+			<dd>A description list is perfect for defining terms.</dd>
+			<dt>Euismod</dt>
+			<dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+			<dd>Donec id elit non mi porta gravida at eget metus.</dd>
+			<dt>Malesuada porta</dt>
+			<dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+			<dt>Felis euismod semper eget lacinia</dt>
+			<dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+		</dl>
+	</div>
+					<div class="tab-pane active" id="about4">
+									<h3 class="text-light">Daniel <strong>Johnson</strong></h3>
+								<p>Per at postea mediocritatem, vim numquam aliquid eu, in nam sale gubergren. Fuisset delicatissimi duo, qui ut animal noluisse erroribus. Ea eum veniam audire. Dicant vituperata consequuntur.</p>
+			
+		<dl class="dl-horizontal">
+			<dt>Description lists</dt>
+			<dd>A description list is perfect for defining terms.</dd>
+			<dt>Euismod</dt>
+			<dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+			<dd>Donec id elit non mi porta gravida at eget metus.</dd>
+			<dt>Malesuada porta</dt>
+			<dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+			<dt>Felis euismod semper eget lacinia</dt>
+			<dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+		</dl>
+	
+					</div>
+					<div class="tab-pane" id="favorites4">						<p>Duo semper accumsan ea, quidam convenire cum cu, oportere maiestatis incorrupte est eu. Soluta audiam timeam ius te, idque gubergren forensibus ad mel, persius urbanitas usu id. Civibus nostrum fabellas mea te, ne pri lucilius iudicabit. Ut cibo semper vituperatoribus vix, cum in error elitr. Vix molestiae intellegat omittantur an, nam cu modo ullum scriptorem.</p>
+			<p>Quod option numquam vel in, et fuisset delicatissimi duo, qui ut animal noluisse erroribus. Ea eum veniam audire. Per at postea mediocritatem, vim numquam aliquid eu, in nam sale gubergren. Dicant vituperata consequuntur at sea, mazim commodo</p>
+			</div>
+				</div>
+			</div><!--end .box -->
+		</div>
+		<pre class="prettyprint">&lt;div class=&quot;box tabs-left&quot;&gt;
+	&lt;ul class=&quot;box-head nav nav-tabs&quot; data-toggle=&quot;tabs&quot;&gt;
+		...
+	&lt;/ul&gt;
+	&lt;div class=&quot;box-body tab-content&quot;&gt;
+		&lt;div class=&quot;tab-pane active&quot; id=&quot;home&quot;&gt;...&lt;/div&gt;
+		&lt;div class=&quot;tab-pane&quot; id=&quot;about&quot;&gt;...&lt;/div&gt;
+		&lt;div class=&quot;tab-pane&quot; id=&quot;contact&quot;&gt;...&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;!--end .box --&gt;
+</pre>
+	</div>
+	
+	
+		<h3 id="tabs-colors">Tab colors</h3>
+	<p>
+		Use any of the available tab classes to create a colored tabbar.
+	</p>
+	<div class="box box-outlined style-body">
+		<div class="box-head">
+			<header>
+				<h5 class="text-gray-light">Example</h5>
+			</header>
+		</div>
+		<div class="box-body">
+			<div class="row">
+				<div class="col-md-4">
+					<ul class="nav nav-tabs tabs-primary" data-toggle="tabs">
+						<li class="active"><a href="#home5">Home</a></li>
+						<li><a href="#about5">About</a></li>
+						<li><a href="#contact5">Contact</a></li>
+					</ul>
+					<br/>
+					<ul class="nav nav-tabs tabs-success" data-toggle="tabs">
+						<li class="active"><a href="#home5">Home</a></li>
+						<li><a href="#about5">About</a></li>
+						<li><a href="#contact5">Contact</a></li>
+					</ul>
+					<br/>
+					<ul class="nav nav-tabs tabs-warning" data-toggle="tabs">
+						<li class="active"><a href="#home5">Home</a></li>
+						<li><a href="#about5">About</a></li>
+						<li><a href="#contact5">Contact</a></li>
+					</ul>
+					<br/>
+					<ul class="nav nav-tabs tabs-danger" data-toggle="tabs">
+						<li class="active"><a href="#home5">Home</a></li>
+						<li><a href="#about5">About</a></li>
+						<li><a href="#contact5">Contact</a></li>
+					</ul>
+					<br/>
+					<ul class="nav nav-tabs tabs-info" data-toggle="tabs">
+						<li class="active"><a href="#home5">Home</a></li>
+						<li><a href="#about5">About</a></li>
+						<li><a href="#contact5">Contact</a></li>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<ul class="nav nav-tabs tabs-black" data-toggle="tabs">
+						<li class="active"><a href="#home5">Home</a></li>
+						<li><a href="#about5">About</a></li>
+						<li><a href="#contact5">Contact</a></li>
+					</ul>
+					<br/>
+					<ul class="nav nav-tabs tabs-inverse" data-toggle="tabs">
+						<li class="active"><a href="#home5">Home</a></li>
+						<li><a href="#about5">About</a></li>
+						<li><a href="#contact5">Contact</a></li>
+					</ul>
+					<br/>
+					<ul class="nav nav-tabs tabs-gray" data-toggle="tabs">
+						<li class="active"><a href="#home5">Home</a></li>
+						<li><a href="#about5">About</a></li>
+						<li><a href="#contact5">Contact</a></li>
+					</ul>
+					<br/>
+					<ul class="nav nav-tabs tabs-body" data-toggle="tabs">
+						<li class="active"><a href="#home5">Home</a></li>
+						<li><a href="#about5">About</a></li>
+						<li><a href="#contact5">Contact</a></li>
+					</ul>
+					<br/>
+					<ul class="nav nav-tabs tabs-white" data-toggle="tabs">
+						<li class="active"><a href="#home5">Home</a></li>
+						<li><a href="#about5">About</a></li>
+						<li><a href="#contact5">Contact</a></li>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<ul class="nav nav-tabs tabs-support1" data-toggle="tabs">
+						<li class="active"><a href="#home5">Home</a></li>
+						<li><a href="#about5">About</a></li>
+						<li><a href="#contact5">Contact</a></li>
+					</ul>
+					<br/>
+					<ul class="nav nav-tabs tabs-support2" data-toggle="tabs">
+						<li class="active"><a href="#home5">Home</a></li>
+						<li><a href="#about5">About</a></li>
+						<li><a href="#contact5">Contact</a></li>
+					</ul>
+					<br/>
+					<ul class="nav nav-tabs tabs-support3" data-toggle="tabs">
+						<li class="active"><a href="#home5">Home</a></li>
+						<li><a href="#about5">About</a></li>
+						<li><a href="#contact5">Contact</a></li>
+					</ul>
+					<br/>
+					<ul class="nav nav-tabs tabs-support4" data-toggle="tabs">
+						<li class="active"><a href="#home5">Home</a></li>
+						<li><a href="#about5">About</a></li>
+						<li><a href="#contact5">Contact</a></li>
+					</ul>
+					<br/>
+					<ul class="nav nav-tabs tabs-support5" data-toggle="tabs">
+						<li class="active"><a href="#home5">Home</a></li>
+						<li><a href="#about5">About</a></li>
+						<li><a href="#contact5">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<pre class="prettyprint">&lt;ul class=&quot;nav nav-tabs tabs-primary&quot; data-toggle=&quot;tabs&quot;&gt;...&lt;/ul&gt;
+&lt;ul class=&quot;nav nav-tabs tabs-success&quot; data-toggle=&quot;tabs&quot;&gt;...&lt;/ul&gt;
+&lt;ul class=&quot;nav nav-tabs tabs-warning&quot; data-toggle=&quot;tabs&quot;&gt;...&lt;/ul&gt;
+&lt;ul class=&quot;nav nav-tabs tabs-danger&quot; data-toggle=&quot;tabs&quot;&gt;...&lt;/ul&gt;
+&lt;ul class=&quot;nav nav-tabs tabs-info&quot; data-toggle=&quot;tabs&quot;&gt;...&lt;/ul&gt;
+
+&lt;ul class=&quot;nav nav-tabs tabs-black&quot; data-toggle=&quot;tabs&quot;&gt;...&lt;/ul&gt;
+&lt;ul class=&quot;nav nav-tabs tabs-inverse&quot; data-toggle=&quot;tabs&quot;&gt;...&lt;/ul&gt;
+&lt;ul class=&quot;nav nav-tabs tabs-gray&quot; data-toggle=&quot;tabs&quot;&gt;...&lt;/ul&gt;
+&lt;ul class=&quot;nav nav-tabs tabs-body&quot; data-toggle=&quot;tabs&quot;&gt;...&lt;/ul&gt;
+&lt;ul class=&quot;nav nav-tabs tabs-white&quot; data-toggle=&quot;tabs&quot;&gt;...&lt;/ul&gt;
+
+&lt;ul class=&quot;nav nav-tabs tabs-support1&quot; data-toggle=&quot;tabs&quot;&gt;...&lt;/ul&gt;
+&lt;ul class=&quot;nav nav-tabs tabs-support2&quot; data-toggle=&quot;tabs&quot;&gt;...&lt;/ul&gt;
+&lt;ul class=&quot;nav nav-tabs tabs-support3&quot; data-toggle=&quot;tabs&quot;&gt;...&lt;/ul&gt;
+&lt;ul class=&quot;nav nav-tabs tabs-support4&quot; data-toggle=&quot;tabs&quot;&gt;...&lt;/ul&gt;
+&lt;ul class=&quot;nav nav-tabs tabs-support5&quot; data-toggle=&quot;tabs&quot;&gt;...&lt;/ul&gt;
+</pre>
+	</div>
+	
+	</div>
+<!-- END TABBAR -->		
+	</div><!--end .section-body -->
+</section>
+<!-- START CSS SECTION -->
+
+	</div><!--end #content-->		
+	<!-- END CONTENT -->
+	
+</div><!--end #base-->	
+<!-- END BASE -->
+
+	<!-- BEGIN JAVASCRIPT -->
+		
+			<script src="../assets/js/libs/jquery/jquery-1.11.0.min.js"></script>
+<script src="../assets/js/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
+<script src="../assets/js/libs/jquery-ui/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="../assets/js/core/BootstrapFixed.js"></script>
+<script src="../assets/js/libs/bootstrap/bootstrap.min.js"></script>
+<script src="../assets/js/libs/spin.js/spin.min.js"></script>
+<script src="../assets/js/libs/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="../assets/js/core/demo/DemoDocs.js"></script>
+<script src="../assets/js/core/App.js"></script>
+<script src="../assets/js/core/demo/Demo.js"></script>
+
+	
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+	<!-- END JAVASCRIPT -->
+	
+	</body>
+</html>

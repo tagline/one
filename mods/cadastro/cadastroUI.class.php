@@ -1,0 +1,30 @@
+<?php
+                 
+   class CadastroUI extends UI
+    {
+      
+          var $templateFile; 	// Arquivo do template, caso seja um por bloco  
+          var $template; 		// Template da seção, caso seja somente um
+          var $mainClass; 		// Classe principal que fornece dados para o bloco
+          
+          function __construct($templateFile='',$template='') {
+                 
+            $this->mainClass = new Clientes();
+            parent::prepareTemplate($templateFile,$template);   
+            
+          } 
+           
+          function getPrincipal($secao,$secao_in=''){
+            global $geral;
+            
+          	return $this->template->getOutputContent();
+          	
+          }    
+          
+         
+   }
+   
+           
+           
+        
+?>

@@ -11,7 +11,7 @@
           
       $interfaceClass = new VeiculosUI($secao);
       $veiculosClass  = new Veiculos();
-            
+     
       switch ($_GET['in']){
                                       
       	 default:

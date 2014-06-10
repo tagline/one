@@ -49,7 +49,6 @@
 		</div>
 	</div>
 </section>
-
 <!-- END BLOCK : listagem -->
 
 <!-- START BLOCK : cadastro -->
@@ -167,4 +166,55 @@
 	</div>
 </section>
 <!-- END BLOCK : cadastro -->
+
+<!-- START BLOCK : devolucao -->
+<section>
+	<ol class="breadcrumb">
+		<li><a href="{localPath}">home</a></li>
+		<li class="active">Devolução de Veículos</li>
+	</ol>
+	<div class="section-header">
+		<h3 class="text-standard"><i class="fa fa-fw fa-arrow-circle-right text-gray-light"></i>VEÍCULOS LOCADOS</h3>
+	</div>
+	<div class="section-body">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="box">
+					
+					<div class="box-body">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>Loja</th>
+									<th>Ano</th>
+									<th>Modelo</th>
+									<th>Série</th>
+									<th>Valor Diária</th>
+									<th>Valor Total</th>
+									<th class="text-right1" style="width:90px">Ações</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- START BLOCK : lista_veiculos_devolucao -->
+							<tr>
+								<td>{loja}</td>
+								<td>{ano}</td>
+								<td>{modelo}</td>
+								<td>{serie}</td>
+								<td>{valor_diaria}</td>
+								<td><span class="label {label_cor}">{valor_total}</span></td>
+								<td class="text-right">
+									<button type="button" class="btn btn-xs btn-default btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="Devolver"><i class="fa fa-file-text-o"></i></button>
+								</td>
+							</tr>
+							<!-- END BLOCK : lista_veiculos_devolucao -->
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+</section>
+<!-- END BLOCK : devolucao -->
 			

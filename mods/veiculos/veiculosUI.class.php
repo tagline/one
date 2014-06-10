@@ -23,7 +23,7 @@ class VeiculosUI extends UI
 
         	// SELECIONA TODOS OS VEÍCULOS CADASTRADOS
 	        $arrVeiculos = $this->mainClass->getVeiculos();
-	       
+	        
 	        // ITERAÇÃO PARA IMPRIMIR OS VEÍCULOS
 	        foreach($arrVeiculos as $veiculo) {
 	        	$this->template->newBlock("lista_veiculos");
@@ -40,6 +40,9 @@ class VeiculosUI extends UI
         }
         if($secao_in == 'cadastrar') {
         	$this->template->newBlock("cadastro");
+        }   
+        if($secao_in == 'devolver'){
+        	$this->template->newBlock("devolucao");
         }   
             
        	return $this->template->getOutputContent();

@@ -18,7 +18,7 @@
 	</form>
 	<ul class="main-menu">
 		<li>
-		<a href="javascript:void(0);" class="active">
+		<a href="{localPath}veiculos/devolver" class="active">
 			<i class="fa fa-check fa-fw"></i><span class="title">Devolução de Veículo</span>
 		</a>
 		</li>

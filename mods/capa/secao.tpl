@@ -59,7 +59,8 @@
 		<div class="box-body-cadastro box-centered style-inverse">
 			<h2 class="text-light">Cadastre-se</h2>
 			<br/>
-			<form class="form-validate" name="form_cadastro" method="POST">
+			<div id="form_retorno"></div>
+			<form class="form-validate" name="form_cadastro_cliente" method="POST" action="">
 				<div class="form-group">
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-user"></i></span>
@@ -69,7 +70,7 @@
 				<div class="form-group">
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-phone"></i></span>
-						<input type="text" id="telefone" nome="telefone" class="form-control" placeholder="Telefone">
+						<input type="text" id="telefone" nome="telefone" data-inputmask="'mask':'99-9999.9999'" class="form-control" placeholder="Telefone">
 					</div>
 				</div>
 				<div class="form-group">
@@ -81,7 +82,7 @@
 				<div class="form-group">
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-info-circle"></i></span>
-						<input type="text" id="cpf" nome="cpf" class="form-control" placeholder="CPF">
+						<input type="text" id="cpf" nome="cpf" data-inputmask="'mask':'999.999.999-99'" class="form-control" placeholder="CPF">
 					</div>
 				</div>
 				<div class="form-group">
@@ -93,7 +94,7 @@
 				<div class="form-group">
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-						<input type="text" id="cnh" nome="cnh" class="form-control" placeholder="Data de Validade CNH">
+						<input type="text" id="data_validade_cnh" nome="data_validade_cnh" data-inputmask="'alias': 'date'" class="form-control" placeholder="Data de Validade CNH">
 					</div>
 				</div>				
 				<div class="row">
@@ -102,17 +103,16 @@
 						</div>
 					</div>
 					<div class="col-xs-6 text-right">
-						<button class="btn btn-primary" type="submit" id="btn_salvar">
-							<i class="fa fa-save"></i>
-							Cadastrar
-						</button>
+						<input type="button" class="btn btn-primary" onClick="ajaxCadastrarCliente('{localPath}');" value="Cadastrar">
 					</div>
 				</div>
 			</form>
 		</div>
-		<div class="box-footer force-padding-maior">
-			<a class="text-grey" href="{localPath}capa">Efetuar Login</a> 			
+		
+		<div class="box-footer " style="position: relative;heigth:50px; margin-top:610px;">
+			<a class="text-grey" href="{localPath}capa">Efetuar Login &raquo;</a> 			
 		</div>
+		
 	</div>
 </div>
 <!-- END BLOCK : cadastro -->

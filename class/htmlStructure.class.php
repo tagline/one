@@ -33,8 +33,9 @@ class htmlStructure extends html {
     		
     	parent::addBodyCFG("leftmargin='0' topmargin='0' marginwidth='0' marginheight='0'"); 
          
-    	parent::addScript("libs/jquery/jquery-1.11.0.min.js", FALSE);        
+    	parent::addScript("libs/jquery/jquery-1.11.0.min.js", FALSE); 
         parent::addScript("libs/jquery/jquery-migrate-1.2.1.min.js", FALSE);
+        parent::addScript("libs/inputmask/jquery.inputmask.bundle.min.js", FALSE);        
         parent::addScript("core/BootstrapFixed.js", FALSE);
         parent::addScript("libs/bootstrap/bootstrap.min.js", FALSE);
         parent::addScript("core/App.js", FALSE);

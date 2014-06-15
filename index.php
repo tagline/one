@@ -13,9 +13,7 @@ require_once("cfg/cfg.main.php");
 
 $geral = new Geral();
 $db       =  $geral->db;
-$error    =  $geral->error;
 $sessao   =  $geral->sessao;
-$formata  =  $geral->formata;
 $core     =  $geral->core;
 
 /**********************************************************************/

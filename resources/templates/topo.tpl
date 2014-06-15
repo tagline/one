@@ -10,8 +10,8 @@
 			<li><a href="{localPath}cadastro" class="active">
 				<i class="fa fa-user fa-fw"></i><span class="title"> Minha Conta</span></span></a>
 			</li>
-			<li><a href="javascript:;" class="active">
-				<i class="fa fa-sign-out fa-fw"></i><span class="title" id="btn_sair"> Sair</span></span></a>
+			<li><a href="javascript:;" class="active" onClick="ajaxLogout('{localPath}')">
+				<i class="fa fa-sign-out fa-fw"></i><span class="title"> Sair</span></span></a>
 			</li>
 		</ul>
 	</div>

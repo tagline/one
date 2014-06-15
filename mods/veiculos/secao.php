@@ -18,14 +18,22 @@
       	 	echo $interfaceClass->getPrincipal($secao,$_GET['in']);
          break;
          
-      	 //case 'cadastrar':
-      	 //break;
-
          //case 'editar':
          //break;
          
-         //case 'excluir':
-         //break;
+         case 'ajax':
+         	
+         	if($_GET['ac']=='cadastrar') {
+         		$veiculosClass->insertVeiculo($_POST);
+         		echo LOCAL_PATH.$secao."/listar"; die;
+         	}
+         	
+         	if($_GET['ac']=='excluir') {
+	         	$veiculosClass->deleteVeiculo($_POST['veiculo_id']);
+	         	echo LOCAL_PATH.$secao."/listar"; die;
+         	}
+         	
+         break;
          die;
       }
                 	

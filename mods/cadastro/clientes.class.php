@@ -35,14 +35,17 @@ class Clientes
   function insertCliente($arrDados){
       global $geral, $tabela;
 
-      $set = "nome	   	 = '".$arrDados['nome']."',".
-        	 "cpf		 = '".$arrDados['cpf']."',".
-        	 "cnh		 = '".$arrDados['cnh']."',".
-        	 "data_cnh	 = '".$arrDados['data_cnh']."',".
-        	 "telefone	 = '".$arrDados['telefone']."',".
-        	 "email      = '".$arrDados['email']."',";        
+      $set = "nome	   	 		 = '".$arrDados['nome']."',".
+        	 "cpf		 		 = '".$arrDados['cpf']."',".
+        	 "cnh		 		 = '".$arrDados['cnh']."',".
+        	 "data_validade_cnh	 = '".toMySQLCodeDate($arrDados['data_validade_cnh'])."',".
+        	 "telefone	 		 = '".$arrDados['telefone']."',".
+        	 "email      		 = '".$arrDados['email']."'";        
 	  
       $id = $geral->db->db_insert($tabela,$set);	
+      
+      //cria o usuário do cliente
+      $this->insertUsuario($arrDados['email'], $arrDados['nome'], $id);
       
       if($id)
       	return $id;
@@ -89,7 +92,7 @@ class Clientes
   		   "login      		= '".$email."',".
   		   "senha	   		= '".$geral->geraSenha()."'";
   	 
-  	$id = $geral->db->db_insert($tabela,$set);
+  	$id = $geral->db->db_insert("usuarios",$set);
   
   	if($id)
   		return $id;
@@ -97,6 +100,28 @@ class Clientes
   		return 0;
   
   }
+  
+  /**
+   *
+   * @param string $email
+   * @return int $id => last_insert_id
+   */
+  function getUsuarioSenha($email){
+  	global $geral;
+  
+  	if(trim($email)=="")
+  		return "";
+  	
+  	$where = "login = '".$email."'";
+  	$arrDados = $geral->db->db_select("usuarios","senha",$where);
+  
+  	if(count($arrDados)>0)
+  		return $arrDados[0]['senha'];
+  	else
+  		return "";
+  
+  }
+  
 }
 
 ?>

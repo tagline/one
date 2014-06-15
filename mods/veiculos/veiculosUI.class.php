@@ -23,23 +23,36 @@ class VeiculosUI extends UI
 
         	// SELECIONA TODOS OS VEÍCULOS CADASTRADOS
 	        $arrVeiculos = $this->mainClass->getVeiculos();
-	        
-	        // ITERAÇÃO PARA IMPRIMIR OS VEÍCULOS
-	        foreach($arrVeiculos as $veiculo) {
-	        	$this->template->newBlock("lista_veiculos");
-	        	$veiculo['valor_diaria'] = 'R$ '.toVal($veiculo['valor_diaria']);
-	        	$this->template->assign($veiculo);
-	        	
-	        	if($veiculo['disponivel']==1)
-	        		$this->template->assign("label_cor","label-success"); //imprime verde na coluna da disponibilidade
-	        	else
-	        		$this->template->assign("label_cor","label-danger"); //imprime vermelho na coluna da disponibilidade
-	        	
+	        if(count($arrVeiculos)>0) { 
+		        
+	        	// ITERAÇÃO PARA IMPRIMIR OS VEÍCULOS
+		        foreach($arrVeiculos as $veiculo) {
+		        	$this->template->newBlock("lista_veiculos");
+		        	$veiculo['valor_diaria'] = 'R$ '.toVal($veiculo['valor_diaria']);
+		        	$this->template->assign($veiculo);
+		        	
+		        	if($veiculo['disponivel']==1)
+		        		$this->template->assign("label_cor","label-success"); //imprime verde na coluna da disponibilidade
+		        	else
+		        		$this->template->assign("label_cor","label-danger"); //imprime vermelho na coluna da disponibilidade
+		        	
+		        }
 	        }
+	        else
+	        	$this->template->newBlock("sem_registros");
 	             	
         }
         if($secao_in == 'cadastrar') {
+        	
         	$this->template->newBlock("cadastro");
+        	
+        	// busca todas as lojas cadastradas e lista-as no formulário
+        	$arrLojas = $this->mainClass->getLojas();
+        	foreach($arrLojas as $loja) {
+        		$this->template->newBlock("lista_lojas");
+        		$this->template->assign($loja);        		
+        	}
+        	
         }   
         if($secao_in == 'devolver'){
         	$this->template->newBlock("devolucao");

@@ -37,11 +37,20 @@
 								<td class="text-right">
 									<button type="button" class="btn btn-xs btn-default btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="Visualizar"><i class="fa fa-file-text-o"></i></button>
 									<button type="button" class="btn btn-xs btn-default btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="Editar"><i class="fa fa-pencil"></i></button>
-									<button type="button" class="btn btn-xs btn-default btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="Excluir"><i class="fa fa-trash-o"></i></button>
+									<button type="button" class="btn btn-xs btn-default btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="Excluir" onClick="if(confirm('Você tem certeza de que deseja excluir o veículo da base de dados?')) { ajaxExcluirVeiculo('{localPath}',{veiculo_id}); } else return false;"><i class="fa fa-trash-o"></i></button>
 								</td>
 							</tr>
 							<!-- END BLOCK : lista_veiculos -->
 						</tbody>
+						
+						<!-- START BLOCK : sem_registros -->
+						<tbody>
+							<tr>
+								<td colspan=7 class="f_red">Nenhum registro cadastrado.</td>
+							</tr>
+						</tbody>
+						<!-- END BLOCK : sem_registros -->
+						
 					</table>
 				</div>
 			</div>
@@ -68,34 +77,59 @@
 						<header><h4 class="text-light"></h4></header>
 					</div>
 					<div class="box-body">
-						<!--
-						<div class="well">
-							<span class="label label-success"><i class="fa fa-comment"></i></span>
-							<span>
-								Resize your browser or load on different devices to test the responsive utility classes.
-							</span>
-						</div>
-						-->
-						<form class="form-horizontal" role="form">
-							<div class="form-group">
-								<div class="col-lg-1 col-md-2 col-sm-3">
-									<label for="loja_id" class="control-label">Loja</label>
+						<form class="form-horizontal" role="form" name="form_cadastro_veiculos" method="POST" action="">
+							
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<div class="col-lg-2 col-md-4 col-sm-6">
+											<label for="serie" class="control-label">Loja</label>
+										</div>
+										<div class="col-lg-8 col-md-8 col-sm-6">
+											<select name="loja_id" id="loja_id" class="form-control">
+												<option>-- selecione --</option>
+												<!-- START BLOCK : lista_lojas -->
+												<option value="{loja_id}">{nome}</option>
+												<!-- END BLOCK : lista_lojas -->
+											</select>
+										</div>
+									</div>
 								</div>
-								<div class="col-lg-4 col-md-10 col-sm-9">
-									<select name="loja_id" id="loja_id" class="form-control">
-										<option>-- selecione --</option>
-										<!-- START BLOCK : lista_lojas -->
-										<option value="{loja_id}">{nome}</option>
-										<!-- END BLOCK : lista_lojas -->
-									</select>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<div class="col-lg-2 col-md-4 col-sm-6">
+											<label for="ano" class="control-label">Disponível</label>
+										</div>
+										<div class="col-lg-4 col-md-8 col-sm-6">
+											<select name="disponivel" id="disponivel" class="form-control">
+												<option value="1" selected>Sim</option>
+												<option value="0">Não</option>
+											</select>
+										</div>
+									</div>
 								</div>
 							</div>
-							<div class="form-group">
-								<div class="col-lg-1 col-md-2 col-sm-3">
-									<label for="email1" class="control-label">Modelo</label>
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<div class="col-lg-2 col-md-4 col-sm-6">
+											<label for="serie" class="control-label">Modelo</label>
+										</div>
+										<div class="col-lg-8 col-md-8 col-sm-6">
+											<input type="text" name="modelo" id="modelo" class="form-control">
+										</div>
+									</div>
 								</div>
-								<div class="col-lg-10 col-md-10 col-sm-9">
-									<input type="text" name="modelo" id="modelo" class="form-control" >
+								<div class="col-sm-6">
+									<div class="form-group">
+										<div class="col-lg-2 col-md-4 col-sm-6">
+											<label for="ano" class="control-label">Valor Diária</label>
+										</div>
+										<div class="col-lg-4 col-md-8 col-sm-6">
+											<input type="text" name="valor_diaria" data-inputmask="'alias': 'decimal'" id="valor_diaria" class="form-control" >
+											<p class="help-block">Ex.: 128,00</p>
+										</div>
+									</div>
 								</div>
 							</div>
 							<div class="row">
@@ -114,7 +148,7 @@
 										<div class="col-lg-2 col-md-4 col-sm-6">
 											<label for="ano" class="control-label">Ano</label>
 										</div>
-										<div class="col-lg-8 col-md-8 col-sm-6">
+										<div class="col-lg-4 col-md-8 col-sm-6">
 											<input type="text" name="ano" id="ano" class="form-control" >
 										</div>
 									</div>
@@ -137,7 +171,7 @@
 										<div class="col-lg-2 col-md-4 col-sm-6">
 											<label for="placa" class="control-label">Placa</label>
 										</div>
-										<div class="col-lg-8 col-md-8 col-sm-6">
+										<div class="col-lg-4 col-md-8 col-sm-6">
 											<input type="text" name="placa" id="placa" class="form-control" >
 										</div>
 									</div>
@@ -150,13 +184,13 @@
 										<small>Ex.: - Airbag;</small>
 									</label>
 								</div>
-								<div class="col-lg-9 col-md-10 col-sm-9">
+								<div class="col-lg-7 col-md-10 col-sm-9">
 									<textarea name="caracteristicas" id="caracteristicas" class="form-control" rows="5" ></textarea>
 								</div>
 							</div>
-							<div class="form-footer col-lg-offset-8 col-md-offset-3 col-sm-offset-4">
+							<div class="form-footer col-lg-offset-6 col-md-offset-3 col-sm-offset-4">
 								<button type="submit" class="btn btn-default">Limpar Formulário</button>
-								<button type="submit" class="btn btn-primary">Salvar Veículo</button>
+								<input type="button" class="btn btn-primary" onClick="ajaxCadastrarVeiculo('{localPath}');" value="Salvar Veículo">
 							</div>
 						</form>
 					</div>

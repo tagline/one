@@ -29,34 +29,20 @@ class Geral {
 		require_once (CORE_CLASSE_PATH . 'htmlPowerTemplate.class.php');
 		require_once (CORE_CLASSE_PATH . 'html.class.php');
 		require_once (CORE_CLASSE_PATH . 'htmlStructure.class.php');
-		require_once (CORE_CLASSE_PATH . 'paginacao.class.php');
 		require_once (CORE_CLASSE_PATH . 'core.class.php');
 		require_once (CORE_CLASSE_PATH . 'db.class.php');
 		require_once (CORE_CLASSE_PATH . 'estrutura.class.php');
 		require_once (CORE_CLASSE_PATH . 'session.class.php');
-		require_once (CORE_CLASSE_PATH . 'trataTexto.class.php');
 		require_once (CORE_CLASSE_PATH . 'ui.class.php');
 		
 		$this->getDatabaseConnector ();
 		$this->getCore ();
-		$this->getPaginacao ();
 		$this->getEstrutura ();
 		$this->getSessao ();
-		$this->getText ();
 	
 	}
 	
 	public function getUsuario() {
-		$this->usuario = new Usuario ();
-	}
-	
-	public function getText() {
-		$this->text = new TrataTexto ();		
-		$this->secaoTexto = new SecaoTexto ();
-	}
-	
-	public function getPaginacao() {
-		$this->paginacao = new paginar ();
 	}
 	
 	public function getDatabaseConnector() {
@@ -74,8 +60,7 @@ class Geral {
 	public function getCore() {
 		$this->core = new Core ();
 	}
-	
-	
+		
 	public function getSecao($id = 1) {
 		
 		if ($id == '')
@@ -161,65 +146,6 @@ class Geral {
 	
 	}
 	
-	
-	
-	public function setCharset($charset) {
-		
-		Header ( "Content-type: text/HTML; charset=$charset" );
-	
-	}
-	
-	public function limpaValor($string) {
-		
-		$permitidos = array ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.', ',' );
-		
-		$novoString = '';
-		
-		for($i = 0; $i < strlen ( $string ); $i ++) {
-			
-			if (in_array ( $string [$i], $permitidos )) {
-				
-				$novoString .= $string [$i];
-			
-			}
-		}
-		
-		return $novoString;
-	
-	}
-	
-	public function validaData($data) {
-		// /// VERIFICA SE FOI PASSADA UMA DATA VÁLIDA
-		// // FORMATO DD/MM/YYYY
-		
-		$dateCalc = new Date_Calc ();
-		
-		if (strlen ( $data ) < 10)
-			return 0;
-		
-		$ano = substr ( $data, 6, 4 );
-		$mes = substr ( $data, 3, 2 );
-		$dia = substr ( $data, 0, 2 );
-		
-		if ((($ano % 4) == 0) && ($mes == 2) && ($dia > 29))
-			// se o mês for fevereiro e o ano for bissexto, dia não pode
-			// ser maior que 29
-			return 0;
-		else if ((($ano % 4) > 0) && ($mes == 2) && ($dia > 28))
-			// se o mês for fevereiro e o ano não for bissexto, dia não pode
-			// ser maior que 28
-			return 0;
-		else if ((($mes == 4) || ($mes == 6) || ($mes == 9) || ($mes == 11)) && ($dia == 31))
-			// se o mês for Abril, Junho, Setembro ou Novembro, dia não pode ser
-			// 31
-			return 0;
-		elseif (! $dateCalc->isValidDate ( $dia, $mes, $ano ))
-			return 0;
-		else
-			return 1;
-	
-	}
-	
 	function removeAspas($valor) {
 		
 		$valor = addslashes ( str_replace ( "\"", "''", $valor ) );
@@ -251,43 +177,6 @@ class Geral {
 		}
 		return $passwd;
 	}
-	
-	public function debug() {
-		
-		echo '<table>';
-		foreach ( $this as $k => $v )
-			echo '<tr><th>' . $k . '</th><td>' . $v . '</td></tr>';
-		echo '</table>';
-	}
-	
-	function strtoupper_br($texto) {
-		$oque = array (
-
-		"/(?i)á/", "/(?i)ã/", "/(?i)â/", "/(?i)é/", "/(?i)ê/", "/(?i)í/", "/(?i)î/", "/(?i)ó/", "/(?i)õ/", "/(?i)ô/", "/(?i)ú/", "/(?i)û/", "/(?i)ç/" )
-
-		;
-		
-		$peloque = array ("Á", "Ã", "Â", "É", "Ê", "Í", "Î", "Ó", "Õ", "Ô", "Ú", "Û", "Ç" );
-		
-		$texto = strtoupper ( $texto );
-		
-		return preg_replace ( $oque, $peloque, $texto );
-	}
-	
-	function strtolower_br($texto) {
-		$oque = array (
-
-		"/(?i)À/", "/(?i)Ã/", "/(?i)Â/", "/(?i)É/", "/(?i)Ê/", "/(?i)Í/", "/(?i)Î/", "/(?i)Ó/", "/(?i)Õ/", "/(?i)Ô/", "/(?i)Ú/", "/(?i)Û/", "/(?i)Ç/" )
-
-		;
-		
-		$peloque = array ("á", "ã", "â", "é", "ê", "í", "î", "ó", "õ", "ô", "ú", "û", "ç" );
-		
-		$texto = strtolower ( $texto );
-		
-		return preg_replace ( $oque, $peloque, $texto );
-	}
-	
 	
 	function getTemplate($secao = '', $templateFile = '') {
 		

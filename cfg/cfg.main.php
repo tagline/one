@@ -52,8 +52,6 @@ define("PLUGIN_PURE_SCRIPT_PATH","core/plugins/scripts/");                // Scr
 define("PLUGIN_SCRIPT_PATH",      GLOBAL_PATH.PLUGIN_PURE_SCRIPT_PATH);   // Scripts de plugin (adicionais)
 define("PLUGIN_LOCAL_SCRIPT_PATH",LOCAL_PATH.PLUGIN_PURE_SCRIPT_PATH);    // Scripts de plugin (adicionais)
 
-define("PDF_FONTS_PATH",          PLUGIN_CLASSE_PATH."pdf/fonts");          // Pacote fontes para uso em PDF
-define("PDF_FILES",               CORE_LOCAL_PATH."plugins/pdf/files");     // Pacote fontes para uso em PDF
 
 //---------------------------------------
 // SISTEMA
@@ -80,7 +78,6 @@ define("SCRIPT_PATH",              RESOURCE_PATH."scripts/");
 define("SCRIPT_SERVER_PATH",       RESOURCE_GLOBAL_PATH."scripts/");
 define("IMAGE_PATH",               RESOURCE_PATH."images/");
 define("IMAGE_GLOBAL_PATH",        RESOURCE_GLOBAL_PATH."images/");
-define("SWF_PATH",                 RESOURCE_PATH."swf/");
 define("STYLE_PATH",               RESOURCE_PATH."styles/");
 define("STYLE_SERVER_PATH",        RESOURCE_GLOBAL_PATH."styles/");
 
@@ -91,12 +88,10 @@ define("CLASSE_HTML_STRUCTURE",          TEMPLATE_CLASSE_PATH."htmlStructure.cla
 define("CLASSE_HTML",                    TEMPLATE_CLASSE_PATH."html.class.php");
 define("CLASSE_POWER_TEMPLATE",          TEMPLATE_CLASSE_PATH."htmlPowerTemplate.class.php");
 define("CLASSE_HTML_TEMPLATE",           TEMPLATE_CLASSE_PATH."htmlTemplate.class.php");
-define("CLASSE_PAGINACAO",               CLASSE_PATH."paginacao.class.php");
 define("MYSQLDB_CLASS",                  CLASSE_PATH."db.class.php");
 
 require_once(CORE_CLASSE_PATH.'main.php');
 require_once(CORE_CLASSE_PATH.'geral.class.php');
 require_once(CORE_CLASSE_PATH.'url.class.php');
-require_once(CORE_CLASSE_PATH.'paginacao.class.php');
 
 ?>

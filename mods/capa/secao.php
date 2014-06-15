@@ -17,9 +17,11 @@
       		echo $interfaceClass->efetuarLogin($_POST['login'],$_POST['senha']);
       	 break;
       	 
-      	 case 'logout' :
-      	 	$geral->core->logoff();
-      	 	echo LOCAL_PATH.'capa';
+      	 case 'ajax' :
+      	 	if($_GET['ac']=='logout') {
+      	 		$geral->core->logoff();
+	      	 	echo LOCAL_PATH; die;
+      	 	}
       	 break;
       		
       	 default:

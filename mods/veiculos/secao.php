@@ -11,26 +11,35 @@
           
       $interfaceClass = new VeiculosUI($secao);
       $veiculosClass  = new Veiculos();
-     
+         
       switch ($_GET['in']){
                                       
       	 default:
       	 	echo $interfaceClass->getPrincipal($secao,$_GET['in']);
          break;
          
-         //case 'editar':
-         //break;
-         
          case 'ajax':
          	
          	if($_GET['ac']=='cadastrar') {
-         		$veiculosClass->insertVeiculo($_POST);
-         		echo LOCAL_PATH.$secao."/listar"; die;
+         		if($_POST['veiculo_id']>0){ // edição de um veículo já cadastrado
+         			$veiculosClass->updateVeiculo($_POST);
+         		}
+         		else // cadastro de um veículo
+         			$veiculosClass->insertVeiculo($_POST);
+         		
+         		echo LOCAL_PATH.$secao."/listar"; 
+         		die;
          	}
          	
          	if($_GET['ac']=='excluir') {
 	         	$veiculosClass->deleteVeiculo($_POST['veiculo_id']);
-	         	echo LOCAL_PATH.$secao."/listar"; die;
+	         	echo LOCAL_PATH.$secao."/listar"; 
+	         	die;
+         	}
+         	
+         	if($_GET['ac']=='buscar') {
+         		echo $interfaceClass->getPrincipal($secao,'listar');
+         		die;
          	}
          	
          break;

@@ -9,7 +9,8 @@ $(document).ready(function(){
         $("#form_login_retorno").html('Se você já é cadastrado, preencha os campos de login corretamente.');
         return false;
       }
-    });
+    });	
+	
 	
 });
 
@@ -23,6 +24,18 @@ function dataValida(val) {
 	
 	return reDate.test(val);
 	//return false;
+}
+
+function efetuarBusca(url) {
+	
+	$.ajax({
+		type: "POST",
+		url: url + "veiculos/ajax/buscar",
+		data: { busca_veiculo : $("#busca_veiculo").val() },
+		context: document.body
+	}).done(function(retorno) {
+		$("#content").html(retorno);
+	});	
 }
 
 function ajaxExcluirVeiculo(url, id) {
@@ -82,11 +95,15 @@ function ajaxCadastrarCliente(url) {
 	$.ajax({
 		type: "POST",
 		url: url + "cadastro/ajax/cadastrarCliente",
-		data: { nome : $("#nome").val(), telefone : $("#telefone").val(), email : $("#email").val(), cpf : $("#cpf").val(), cnh : $("#cnh").val(), data_validade_cnh : $("#data_validade_cnh").val() },
+		data: { nome : $("#nome").val(), telefone : $("#telefone").val(), email : $("#email").val(), cpf : $("#cpf").val(), cnh : $("#cnh").val(), data_validade_cnh : $("#data_validade_cnh").val(), senha : $("#senha").val() },
 		context: document.body
-	}).done(function(retorno) {
-		alert(retorno);
-		window.location = retorno;
+	}).done(function(retorno) {	
+		if(retorno==1)
+			alert("Seu cadastro foi atualizado com sucesso!");
+		else {
+			alert("Seu cadastro foi concluído com sucesso! BEM VINDO!");
+			window.location = retorno;
+		}
 	});
 	
 }
@@ -94,15 +111,12 @@ function ajaxCadastrarCliente(url) {
 function ajaxCadastrarVeiculo(url) {
 
 	var validacao = '';
-	
-	
-	alert($("#loja_id").val());
-	
+		
 	// validação dos campos
     if ($('#loja_id').val().length < 1) {
     	validacao += '>> LOJA\n'
     }    
-    if ($('#modelo').val().length < 8) {
+    if ($('#modelo').val().length < 2) {
     	validacao += '>> MODELO\n';
     }   
     if ($('#serie').val().length < 2) {
@@ -117,7 +131,10 @@ function ajaxCadastrarVeiculo(url) {
     if ($('#placa').val().length < 3) {
     	validacao += '>> PLACA\n';
     }
-    if ($('#caracteristicas').val().length < 3) {
+    if ($('#valor_diaria').val().length < 5) {
+    	validacao += '>> VALOR DIÁRIA\n';
+    }
+    if ($('#caracteristicas').val().length < 5) {
     	validacao += '>> CARACTERÍSTICAS\n';
     }
     
@@ -125,14 +142,19 @@ function ajaxCadastrarVeiculo(url) {
     	alert('Preencha corretamente o(s) campo(s) abaixo: \n' + validacao);
     	return 0;
     }	
-		
+	    
 	$.ajax({
 		type: "POST",
 		url: url + "veiculos/ajax/cadastrar",
-		data: { loja_id : $("#loja_id").val(), modelo : $("#modelo").val(), serie : $("#serie").val(), ano : $("#ano").val(), potencia : $("#potencia").val(), placa : $("#placa").val(), caracteristicas : $("#caracteristicas").val() },
+		data: { loja_id : $("#loja_id").val(), modelo : $("#modelo").val(), serie : $("#serie").val(), ano : $("#ano").val(), potencia : $("#potencia").val(), placa : $("#placa").val(), caracteristicas : $("#caracteristicas").val(), valor_diaria : $("#valor_diaria").val() , veiculo_id : $("#veiculo_id").val() },
 		context: document.body
 	}).done(function(retorno) {
-		alert(retorno);
+		
+		if($("#veiculo_id").val() > 0)
+			alert("Registro atualizado com sucesso!");
+		else
+			alert("Veículo inserido com sucesso!");
+		
 		window.location = retorno;
 	});
 	

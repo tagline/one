@@ -9,9 +9,9 @@
 		<a href="javascript:void(0);"><i class="fa fa-search fa-fw search-icon"></i><i class="fa fa-angle-left fa-fw close-icon"></i></a>
 		<div class="form-group">
 			<div class="input-group">
-				<input type="text" class="form-control navbar-input" placeholder="Buscar veículo">
+				<input type="text" name="busca_veiculo" id="busca_veiculo" class="form-control navbar-input" placeholder="Buscar veículo">
 				<span class="input-group-btn">
-					<button class="btn btn-equal" type="button"><i class="fa fa-search"></i></button>
+					<a href="javascript:;" onClick="efetuarBusca('{localPath}');"><button id="btn_buscar" class="btn btn-equal" type="button"><i class="fa fa-search"></i></button></a>
 				</span>
 			</div>
 		</div>
@@ -30,11 +30,13 @@
 				<li><a href="{localPath}veiculos/listar">Listar</a></li>
 				<li><a href="{localPath}veiculos/cadastrar">Cadastrar</a></li>			
 			</ul>
+		<!--
 		<li>
 			<a href="javascript:void(0);" class="active">
 				<i class="fa fa-users fa-fw"></i><span class="title">Gerenciar Usuários</span>
 			</a>
 		</li>
+		-->
 		<li>
 		<a href="{localPath}" class="active">
 			<i class="fa fa-paperclip fa-fw"></i><span class="title">Relatórios</span></span>

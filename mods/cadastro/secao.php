@@ -17,14 +17,32 @@
 
       	  case 'ajax':
       	  	if($_GET['ac'] == 'cadastrarCliente') {
-	      	  	// efetua cadastro do cliente
-      	  		$clienteClass->insertCliente($_POST);
 	      	  	
-      	  		// já efetua login do cliente
-      	  		$geral->core->logon($_POST['email'], $clienteClass->getUsuarioSenha($_POST['email']));
-      	  		
-      	  		// retorna a URL para redirecionar o usuário
-      	  		echo LOCAL_PATH; die;
+      	  		if($_SESSION['cliente_id']>0) {
+      	  			
+      	  			// atualiza o cadastro do cliente
+      	  			$clienteClass->updateCliente($_POST);
+      	  			
+      	  			// atualiza senha, caso o cliente tenha alterado
+      	  			if(!trim($_POST['senha']))
+      	  				unset($_POST['senha']);
+      	  			else 
+      	  				$clienteClass->updateUsuarioSenha($_POST['email'], $_POST['senha']);
+      	  			
+      	  			echo '1';
+      	  			die;
+      	  		}
+      	  		else {
+	      	  		// efetua cadastro do cliente
+	      	  		$clienteClass->insertCliente($_POST);
+		      	  	
+	      	  		// já efetua login do cliente
+	      	  		$geral->core->logon($_POST['email'], $clienteClass->getUsuarioSenha($_POST['email']));
+	      	  		
+	      	  		// retorna a URL para redirecionar o usuário
+	      	  		echo LOCAL_PATH;
+	      	  		die;
+      	  		}
       	  	}      	  	      	  
     	  break;
       		

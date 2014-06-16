@@ -17,6 +17,13 @@
           function getPrincipal($secao,$secao_in=''){
             global $geral;
             
+            if($_SESSION['cliente_id']) {
+            	
+            	// abre o cadastro com os dados do cliente logado
+            	$arrDadosCliente = $this->mainClass->getCliente();
+            	$this->template->assign($arrDadosCliente);            	
+            }
+            	
           	return $this->template->getOutputContent();
           	
           }    

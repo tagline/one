@@ -16,9 +16,9 @@ class Clientes
       $arrClientes = array();
       
       if ($id > 0)
-      	$where = "WHERE cliente_id=$id";
+      	$where = "cliente_id=$id";
       else
- 		$where = "WHERE cliente_id=".$_SESSION['cliente_id'];
+ 		$where = "cliente_id=".$_SESSION['cliente_id'];
       
       $campos = "*";
       $arrClientes = $geral->db->db_select($tabela,$campos,$where);
@@ -56,20 +56,21 @@ class Clientes
  
   /**
    *
-   * @param array $arrDados
+   * @param array $arrDados => $_POST contendo os dados
    * @return int $id => id updated
    */
   function updateCliente($arrDados){
   	global $geral, $tabela;
   
-  	$set = "nome	   	 = '".$arrDados['nome']."',".
-  			"cpf		 = '".$arrDados['cpf']."',".
-  			"cnh		 = '".$arrDados['cnh']."',".
-  			"data_cnh	 = '".$arrDados['data_cnh']."',".
-  			"telefone	 = '".$arrDados['telefone']."',".
-  			"email       = '".$arrDados['email']."',";
-  	 
-  	$id = $geral->db->db_update($tabela,$set);
+  	$set =  "nome	   	 	   = '".$arrDados['nome']."',".
+  			"email       	   = '".$arrDados['email']."',".
+  			"cpf		 	   = '".$arrDados['cpf']."',".
+  			"telefone	 	   = '".$arrDados['telefone']."',".
+  			"cnh		 	   = '".$arrDados['cnh']."',".
+  			"data_validade_cnh = '".toMySQLCodeDate($arrDados['data_validade_cnh'])."'";  			
+  	$where = "cliente_id='".$_SESSION['cliente_id']."'";
+  	
+  	$id = $geral->db->db_update($tabela,$set,$where);
   
   	if($id)
   		return $id;
@@ -96,6 +97,26 @@ class Clientes
   
   	if($id)
   		return $id;
+  	else
+  		return 0;
+  
+  }
+  
+  /**
+   *
+   * @param string $email,$senha
+   * @return int => 1 - sucesso e 0 - falha
+   */ 
+  function updateUsuarioSenha($email,$senha){
+  	global $geral;
+  
+  	$set   = "senha = '".trim($senha)."'";
+  	$where = "login='".trim($email)."'";  
+  		
+  	$id = $geral->db->db_update("usuarios",$set,$where);
+  
+  	if($id)
+  		return 1;
   	else
   		return 0;
   

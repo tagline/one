@@ -10,13 +10,16 @@ class Veiculos
    * @param integer $id
    * @return string
    */
-  function getVeiculos($id=0){
+  function getVeiculos($id=0,$restricao=''){
       global $geral, $tabela;
      
       $arrVeiculos = array();
+      $where = "";
       
       if ($id > 0)
-      	$where = "WHERE veiculo_id=$id";
+      	$where = "v.veiculo_id=".$id;
+      elseif(trim($restricao)<>"")
+      	$where = $restricao; 
       else
  		$where = "";
       
@@ -38,14 +41,14 @@ class Veiculos
       global $geral, $tabela;
 
       $set = "loja_id	   	  = '".$arrDados['loja_id']."',".
-        	 "modelo	   	  = '".$arrDados['modelo']."',".
+        	 "modelo	   	  = '".utf8_decode($arrDados['modelo'])."',".
         	 "ano		   	  = '".$arrDados['ano']."',".
-        	 "serie		   	  = '".$arrDados['serie']."',".
+        	 "serie		   	  = '".utf8_decode($arrDados['serie'])."',".
         	 "potencia	   	  = '".$arrDados['potencia']."',".
         	 "placa		   	  = '".$arrDados['placa']."',".
         	 "disponivel      = '".$arrDados['disponivel']."',".
-        	 "valor_diaria    = '".$arrDados['valor_diaria']."',".
-        	 "caracteristicas = '".$arrDados['caracteristicas']."'";        
+        	 "valor_diaria    = '".toDecimal($arrDados['valor_diaria'])."',".
+        	 "caracteristicas = '".utf8_decode($arrDados['caracteristicas'])."'";        
 	  
       $id = $geral->db->db_insert($tabela,$set);	
       
@@ -56,6 +59,34 @@ class Veiculos
              	
   }
   
+  /**
+   *
+   * @param array $arrDados ($_POST com os dados)
+   * @return int => 1 = sucesso ou 0 = falha
+   */
+  function updateVeiculo($arrDados){
+  	global $geral, $tabela;
+  
+  	$set = "loja_id	   	  	 = '".$arrDados['loja_id']."',".
+  			"modelo	   	 	 = '".utf8_decode($arrDados['modelo'])."',".
+  			"ano		   	 = '".$arrDados['ano']."',".
+  			"serie		   	 = '".utf8_decode($arrDados['serie'])."',".
+  			"potencia	   	 = '".$arrDados['potencia']."',".
+  			"placa		   	 = '".$arrDados['placa']."',".
+  			"disponivel      = '".$arrDados['disponivel']."',".
+  			"valor_diaria    = '".toDecimal($arrDados['valor_diaria'])."',".
+  			"caracteristicas = '".utf8_decode($arrDados['caracteristicas'])."'";
+  	
+  	$where = "veiculo_id=".$arrDados['veiculo_id'];
+  	 
+  	$id = $geral->db->db_update($tabela,$set,$where);
+  
+  	if($id)
+  		return 1;
+  	else
+  		return 0;
+  
+  }
   /**
    *
    * @param int $id

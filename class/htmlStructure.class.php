@@ -41,6 +41,11 @@ class htmlStructure extends html {
         parent::addScript("core/App.js", FALSE);
         parent::addScript("core/geral.js", FALSE);
         
+        if($_GET['on']=='veiculos' && ($_GET['in']=='cadastrar' || $_GET['in']=='editar')) {        	
+        	parent::addScript("libs/jquery/jquery.maskMoney.min.js", FALSE);
+        	parent::addScriptModule(MODULES_PURE_PATH."veiculos/scripts.js", FALSE); 
+        }	
+        
         // ARQUIVOS DE ESTILOS //    
       	parent::addStyle("theme-default/bootstrap.css");
       	parent::addStyle("theme-default/boostbox.css");

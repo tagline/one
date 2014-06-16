@@ -155,7 +155,6 @@ class edz_db {
 		if ($debug || $this->debug)
 			echo "<p style=color:#008080>$strQuery</p>";
 		
-		
 		$aReturn = array ();
 		$idResult = mysql_query ( $strQuery, $this->idLink );
 		$this->db_handle_error ( $strQuery );
@@ -247,6 +246,7 @@ class edz_db {
 		if ($debug || $this->debug)
 			echo "<p style=color:#008080>$strQuery</p>";
 		
+	
 		$intReturn = mysql_query ( $strQuery, $this->idLink );
 		
 		$this->db_handle_error ( $strQuery );

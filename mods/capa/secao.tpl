@@ -59,7 +59,6 @@
 		<div class="box-body-cadastro box-centered style-inverse">
 			<h2 class="text-light">Cadastre-se</h2>
 			<br/>
-			<div id="form_retorno"></div>
 			<form class="form-validate" name="form_cadastro_cliente" method="POST" action="">
 				<div class="form-group">
 					<div class="input-group">

@@ -2,6 +2,7 @@
 
 global $geral;
 
+// define o tempo que a sessão deve permanecer sem expirar
 define('intSegundosSessaoExpira', $_SERVER['SERVER_NAME'] == 'localhost'?12000:2300);
 
 class Core {
@@ -80,8 +81,7 @@ class Core {
         unset($_SESSION);
         session_destroy();
         
-  	}
-	
+  	}	
 
   	function finaliza ($template) {
   		
@@ -99,78 +99,6 @@ class Core {
   	
   	}
 	
-  
-    //------------------------------------------------------------------------------------------------------
-    function upload($campo, $largura = '', $prefixo='img_', $pasta = '')
-    {
-    	
-    	$file = $_FILES[$campo][tmp_name];
-    	$novo_nome = criaNome($prefixo, $_FILES[$campo][name]);
-    	
-    	if($pasta) $pasta = $pasta.'/';
-    	
-    	$dir = GLOBAL_PATH.'upload/'.$pasta.$novo_nome;
-    	 
-    	
-    	if(!file_exists($dir))
-    	{
-    		if(!$largura)
-    			move_uploaded_file($file,$dir);
-    		else
-    		{
-    			$arq = new FileHandler();
-    			$arq->resizeToFile($file, $largura, '', $dir, 100);	
-    		}
-    		
-    		return $novo_nome;
-    	}
-    	else return '';
-    }
-    
-    
-    function processaAjaxUploads() {    	
-    	global $db,$sessao,$modulo,$geral;
-    	
-    	error_reporting(E_ALL);
-    	
-    	require_once(CORE_CLASSE_PATH."image.class.php");
-    	$image = new Image();
- 
-      	foreach ($_FILES as $key => $file) {        
-                       
-            	$subdiretorio = ($_POST['subdiretorio'] != '' ? $_POST['subdiretorio'].'/' : '');
-                  
-      			//// SE UM ARQUIVO FOI ENVIADO \\\\
-        		if(!empty($_FILES[$key]['tmp_name'])) {
-      
-        	  	$pasta = UPLOAD_PATH.$subdiretorio;
-        			
-              	$ext = end(explode(".",strtolower($file['name'])));         
-              
-              	$isImage = (eregi('jpg',$ext) || eregi('jpeg',$ext) || eregi('png',$ext) || eregi('gif',$ext) ? 1 : 0);
-    
-        		$nome = 'arquivo_'.$image->aleatorio(10).'.'.$ext;
-        	  	
-        		if ($isImage) {
-          			$width = (!empty($_POST[$key.'_resizeWidth'])) ? $_POST[$key.'_resizeWidth'] : '';
-          			$height = (!empty($_POST[$key.'_resizeHeight'])) ? $_POST[$key.'_resizeHeight'] : '';
-          		
-          			$widthBig = (!empty($_POST[$key.'_resizeBigWidth'])) ? $_POST[$key.'_resizeBigWidth'] : '';
-          			$heightBig = (!empty($_POST[$key.'_resizeBigHeight'])) ? $_POST[$key.'_resizeBigHeight'] : '';
-          		   
-               	 	$ok = $image->upload($_FILES[$key]['tmp_name'],$pasta.$nome);
-        		  	$image->resizeImage($pasta.$nome, $pasta.'p_'.$nome,$ext, $width, $height);
-        			
-        	 	}
-        		else 
-                	$image->upload($_FILES[$key]['tmp_name'],$pasta.$nome);
-      	   }
-        }   
-        
-        return $nome;
-      
-    }
-  	
   	
 } //------- fim da classe
 

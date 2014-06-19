@@ -1787,6 +1787,11 @@ textarea.no-resize {
   background-color: #2e383d;
   border-color: #232b2e;
 }
+.btn-inverse-blue {
+  color: #ffffff;
+  background-color: #108fe3;
+  border-color: #108fe3;
+}
 .btn-inverse:hover,
 .btn-inverse:focus,
 .btn-inverse:active,
@@ -1795,6 +1800,15 @@ textarea.no-resize {
   color: #ffffff;
   background-color: #1c2326;
   border-color: #090b0c;
+}
+.btn-inverse-blue:hover,
+.btn-inverse-blue:focus,
+.btn-inverse-blue:active,
+.btn-inverse-blue.active,
+.open .dropdown-toggle.btn-inverse-blue {
+  color: #ffffff;
+  background-color: #3333FF;
+  border-color: #3333FF;
 }
 .btn-inverse:active,
 .btn-inverse.active,

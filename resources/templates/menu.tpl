@@ -16,6 +16,8 @@
 			</div>
 		</div>
 	</form>
+	
+	<!-- START BLOCK : menu_administrador_geral -->
 	<ul class="main-menu">
 		<li>
 		<a href="{localPath}veiculos/devolver" class="active">
@@ -43,4 +45,50 @@
 		</a>
 		</li>
 	</ul>
+	<!-- END BLOCK : menu_administrador_geral -->
+	
+	<!-- START BLOCK : menu_administrador -->
+	<ul class="main-menu">
+		<li>
+		<a href="{localPath}" class="active">
+			<i class="fa fa-paperclip fa-fw"></i><span class="title">Relatórios</span></span>
+		</a>
+		</li>
+	</ul>
+	<!-- END BLOCK : menu_administrador -->
+	
+	<!-- START BLOCK : menu_secretaria -->
+	<ul class="main-menu">
+		<li>
+			<a href="javascript:void(0);" class="active">
+				<i class="fa fa-list fa-fw"></i><span class="title">Gerenciar Veículos</span> <span class="expand-sign">+</span>
+			</a>
+			<ul>
+				<li><a href="{localPath}veiculos/listar">Listar</a></li>
+				<li><a href="{localPath}veiculos/cadastrar">Cadastrar</a></li>			
+			</ul>
+		<li>
+		<a href="{localPath}" class="active">
+			<i class="fa fa-paperclip fa-fw"></i><span class="title">Relatórios</span></span>
+		</a>
+		</li>
+	</ul>
+	<!-- END BLOCK : menu_secretaria -->
+	
+	<!-- START BLOCK : menu_cliente -->
+	<ul class="main-menu">
+		<li>
+		<a href="{localPath}veiculos/devolver" class="active">
+			<i class="fa fa-check fa-fw"></i><span class="title">Devolução de Veículo</span>
+		</a>
+		</li>
+		<li>
+			<a href="{localPath}veiculos/listar" class="active">
+				<i class="fa fa-list fa-fw"></i><span class="title">Visualizar Veículos</span> <span class="expand-sign">+</span>
+			</a>
+		</li>	
+	</ul>
+	<!-- END BLOCK : menu_cliente -->
+	
+	
 </div>

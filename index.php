@@ -1,10 +1,10 @@
 <?php
 
 error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);
-//error_reporting(E_ALL); 
-       
+
 ini_set('max_execution_time','9999999');
 ob_start();
+// seta o header da página
 Header("Content-type: text/html; charset=iso-8859-1");
 session_start();
 
@@ -27,14 +27,11 @@ if ($_GET['ajaxUpload']) {
   die;
 }
 
-// IMPORTA CLASSES DO SISTEMA
-//$geral->importaDependenciaModulo('classes');
-
 $url	= new url($_SERVER['REQUEST_URI']);    
 $url->convertGET();
                   
-
-if($_GET['on'] == "" || $_GET['on'] == "home") {
+// se não tiver nenhum ON setado ou não tiver login > sempre direcionado para página de login
+if($_GET['on'] == "" || $_GET['on'] == "home" || !($_SESSION['email'])) {
 	$on = 'capa';
 	$_GET['on'] = $on;
 }

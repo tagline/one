@@ -36,8 +36,8 @@
 									<td><span class="label {label_cor}">{disponibilidade}</span></td>
 									<td class="text-right">
 										<a href="{localPath}veiculos/visualizar/id/{veiculo_id}"><button type="button" class="btn btn-xs btn-default btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="Visualizar"><i class="fa fa-file-text-o"></i></button></a>
-										<a href="{localPath}veiculos/editar/id/{veiculo_id}"><button type="button" class="btn btn-xs btn-default btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="Editar" ><i class="fa fa-pencil"></i></button></a>
-										<button type="button" class="btn btn-xs btn-default btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="Excluir" onClick="if(confirm('Você tem certeza de que deseja excluir o veículo da base de dados?')) { ajaxExcluirVeiculo('{localPath}',{veiculo_id}); } else return false;"><i class="fa fa-trash-o"></i></button>
+										<a href="{localPath}veiculos/editar/id/{veiculo_id}"><button type="button" class="btn btn-xs btn-default btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="Editar" {display_editar}><i class="fa fa-pencil"></i></button></a>
+										<button type="button" class="btn btn-xs btn-default btn-equal" data-toggle="tooltip" data-placement="top" data-original-title="Excluir" {display_excluir} onClick="if(confirm('Você tem certeza de que deseja excluir o veículo da base de dados?')) { ajaxExcluirVeiculo('{localPath}',{veiculo_id}); } else return false;"><i class="fa fa-trash-o"></i></button>
 									</td>
 								</tr>
 								<!-- END BLOCK : lista_veiculos -->
@@ -85,7 +85,9 @@
 							<span style="margin-left:40px;" class="badge badge-success">Disponível</span></h4>  
 							<!-- END BLOCK : disponivel -->
 							<a class="btn btn-inverse stick-top-right" style="margin:0 80px 0 0;" href="{localPath}veiculos/listar">Voltar</a>
-							<a class="btn btn-inverse stick-top-right" style="margin:40px 80px 0 0;" href="#">Efetuar Locação</a>
+							<!-- START BLOCK : btn_locacao -->
+							<a class="btn btn-inverse-blue stick-top-right" style="margin:40px 80px 0 0;" href="#">Efetuar Locação</a>
+							<!-- END BLOCK : btn_locacao -->
 							<p>
 							<strong>Ano:</strong> {ano} <br>
 							<strong>Série:</strong> {serie} <br>

@@ -48,6 +48,12 @@ class VeiculosUI extends UI
 		        	else
 		        		$this->template->assign("label_cor","label-danger"); //imprime vermelho na coluna da disponibilidade
 		        	
+		        	// se usuário logado for do perfil CLIENTE > não tem acesso às funçoes de Editar e Excluir
+		        	if($_SESSION['usuario_tipo_id']==3){
+		        		$this->template->assign("display_editar","style='display:none;'");
+		        		$this->template->assign("display_excluir","style='display:none;'");
+		        	}
+		        	
 		        }
 	        }
 	        else

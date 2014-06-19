@@ -81,6 +81,11 @@ class htmlStructure extends html {
 		$TPLV = new templatePower ( TEMPLATE_PATH . "topo.tpl" );
 		$TPLV->prepare ();
 		$TPLV->assignGlobal ( $url->var );
+		
+		
+		if($_SESSION['usuario_tipo_id']==3 || $_SESSION['usuario_tipo_id']==4)
+			$TPLV->newBlock("minha_conta");
+		
 	  	$this->body->substituiValor ( "topo", $TPLV->getOutputContent () );
   		
 	}
@@ -91,6 +96,22 @@ class htmlStructure extends html {
 		$TPLV = new templatePower ( TEMPLATE_PATH . "menu.tpl" );
 		$TPLV->prepare ();
 		$TPLV->assignGlobal ( $url->var );
+		
+		// Perfis:
+		// 1 - administrador da loja
+		// 2 - secretária da loja
+		// 3 - cliente
+		// 4 - administrador geral do sistema
+		
+		if($_SESSION['usuario_tipo_id']==1 )
+			$TPLV->newBlock("menu_administrador");
+		elseif($_SESSION['usuario_tipo_id']==2 )
+			$TPLV->newBlock("menu_secretaria");
+		elseif($_SESSION['usuario_tipo_id']==3 )
+			$TPLV->newBlock("menu_cliente");
+		elseif($_SESSION['usuario_tipo_id']==4) {
+			$TPLV->newBlock("menu_administrador_geral");
+		}
 		
 		$this->body->substituiValor ( "menu", $TPLV->getOutputContent () );
 	
